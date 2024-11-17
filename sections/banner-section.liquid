@@ -1,0 +1,155 @@
+<!---------banner section----------------->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="banner-section section-{{ section.id }}-padding" >
+   <div class="page-width">
+       <div class="banner-content">
+         {%- if section.settings.heading != blank -%}
+             <h2 class="main-title">{{ section.settings.heading }}</h2>
+          {% endif %}
+          {%- if section.settings.description  != blank -%}
+             <div class="banner-text">
+               {{ section.settings.description }}
+             </div>
+            {% endif %}
+          {%- if section.settings.button_link  != blank -%}
+             <a href="{{ section.settings.button_link }}" class="main-btn"><span>{{ section.settings.button_text }}</span></a>
+          {% endif %}
+       </div>
+   </div>
+</section>
+
+
+
+{% style %}
+.banner-section.section-{{ section.id }}-padding {
+    background-image:url('{{ section.settings.bg_image | img_url: '' }}');
+    width: 100%;
+    height: 100%;
+    min-height: 598px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.banner-section.section-{{ section.id }}-padding .banner-content{
+  color:{{ section.settings.text_color}};
+  max-width:400px;
+}
+.banner-section.section-{{ section.id }}-padding .banner-content .main-title{
+  color:{{ section.settings.text_color}};
+}
+.banner-section .banner-text p {
+    font-family: "Gilroy";
+    font-weight:normal;
+    margin-top: 9px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+     margin-bottom:0px;
+}
+  .banner-section .main-btn{
+    margin-top:39px;
+  }
+@media screen and (max-width:1024px){
+  .banner-section {
+    min-height: 430px;
+}
+ .banner-section.section-{{ section.id }}-padding {
+    min-height: 524px;
+} 
+}
+
+ @media screen and (max-width:767px){
+  .banner-section .banner-text p {
+    margin-top: 19px;
+}
+.banner-section.section-{{ section.id }}-padding {
+    background-image:url('{{ section.settings.bg_image_mobile | img_url: '' }}');
+    min-height: 467px;
+}
+ }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Banner Section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+      {
+          "type": "image_picker",
+          "id": "bg_image_mobile",
+          "label": "Mobile Background Image"
+        },
+       {
+          "type": "text",
+          "id": "heading",
+          "label": "Title"
+        },
+       {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+      {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color"
+        },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+  "presets": [
+    {
+      "name": "Banner Section",
+    }
+  ]
+  }
+{% endschema %}

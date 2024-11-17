@@ -1,0 +1,360 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "review_banner_R4xMHi": {
+      "type": "review-banner",
+      "blocks": {
+        "logo_BUJHGM": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/yahoo-news-logo-1024x375.png"
+          }
+        },
+        "logo_jfTjBn": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/image-removebg-preview_2.png"
+          }
+        },
+        "logo_mBtqEN": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/image-removebg-preview_1.png"
+          }
+        },
+        "logo_QP6899": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/ezgif-1-7b68911a75.png"
+          }
+        },
+        "logo_PC8wxm": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/WJCL_ABC_22_Savannah.png"
+          }
+        },
+        "logo_ap6zbc": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/original-removebg-preview.png"
+          }
+        },
+        "logo_6WfbGQ": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/04-1.png"
+          }
+        },
+        "logo_QERMMy": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/03-1.png"
+          }
+        },
+        "logo_eeKzda": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/download_7.png"
+          }
+        },
+        "logo_rbwFh9": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/logo-whitebg.png"
+          }
+        },
+        "logo_NYaVKL": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/logo_2.png"
+          }
+        },
+        "logo_P7em3f": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/4.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_BUJHGM",
+        "logo_jfTjBn",
+        "logo_mBtqEN",
+        "logo_QP6899",
+        "logo_PC8wxm",
+        "logo_ap6zbc",
+        "logo_6WfbGQ",
+        "logo_QERMMy",
+        "logo_eeKzda",
+        "logo_rbwFh9",
+        "logo_NYaVKL",
+        "logo_P7em3f"
+      ],
+      "settings": {
+        "heading": "What SickFit Customers Say",
+        "description": "<p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. <\/p>",
+        "btn_link": "shopify:\/\/collections\/all",
+        "btn_text": "Shop Now",
+        "google_logo": "shopify:\/\/shop_images\/G.png",
+        "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+        "rating_text": "<p><strong>4.9 <\/strong>122 reviews<\/p>",
+        "product_img": "shopify:\/\/shop_images\/039b806fa595eb8f4bbcc54e89c47b06.png",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "main_title": "Featured On"
+      }
+    },
+    "review_card_section_zYFjkf": {
+      "type": "review-card-section",
+      "blocks": {
+        "card_yABmyg": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Apparel<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "Love, love, love these bodysuits.",
+            "description": "<p>I was skeptical at first as I was concerned they would ride up, but to my surprise, they do not! They are soft and comfortable! Thanks Paden 😊<\/p>",
+            "name": "- Candace Helder"
+          }
+        },
+        "card_tzqwDm": {
+          "type": "card",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/socks",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "I never knew how much comfortable socks mattered until these!",
+            "description": "<p>Hands down the most comfortable sock I’ve ever had...<\/p>",
+            "name": "- Ariel Sickles"
+          }
+        },
+        "card_ndcfEr": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "Best quality socks money can buy!",
+            "description": "<p>I’ve been wearing the same pack of socks for 2 years and haven’t experienced a decrease in quality! SickFit socks only!!<\/p>",
+            "name": "- Alston S"
+          }
+        },
+        "card_t87tCY": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "I came SickFit (Paden) at a networking event and was instantly sold on the quality of the socks.",
+            "description": "<p>I placed an order within minutes of seeing the samples and was super excited...<\/p>",
+            "name": "- Lereco Edwards"
+          }
+        },
+        "card_EAA9Tm": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Apparel<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "This is a great company with amazing products!",
+            "description": "<p>I started by buying two pair of shorts and later had to go back to purchase them all! I love the feel, breathability, and style of their products.<\/p>",
+            "name": "- Marquis Pitts"
+          }
+        },
+        "card_yWcVpy": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Collections<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "The comfiest socks I’ve owned!",
+            "description": "<p>Hold there shape throughout the whole day. My fav collection is the Juneteenth!<\/p>",
+            "name": "- Trey Mckinney"
+          }
+        },
+        "card_CQJY7r": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "Super comfortable socks!",
+            "description": "<p> I wore them with my work boots and my workout shoes. Love them!<\/p>",
+            "name": "- Jessica Jackson"
+          }
+        },
+        "card_KVA7NW": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Apparel<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "Shorts are comfortable and the material is great.",
+            "description": "<p>These will definitely last. Can wear these to the gym or even out. Delivery was pretty fast. Will be being more from them for sure.<\/p>",
+            "name": "- Nico Rhode"
+          }
+        },
+        "card_bDMNmW": {
+          "type": "card",
+          "settings": {
+            "button_link": "#",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "",
+            "card_title": "I’m officially converting all my socks to SickFit.",
+            "description": "<p>These are really special socks and SO well made. They’re soft, supportive on my high arches, comfortable, and last a lot longer...<\/p>",
+            "name": "- Emily McMahon"
+          }
+        }
+      },
+      "block_order": [
+        "card_yABmyg",
+        "card_tzqwDm",
+        "card_ndcfEr",
+        "card_t87tCY",
+        "card_EAA9Tm",
+        "card_yWcVpy",
+        "card_CQJY7r",
+        "card_KVA7NW",
+        "card_bDMNmW"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_FVEqy8": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script src=\"https:\/\/static.elfsight.com\/platform\/platform.js\" data-use-service-core defer><\/script>\n<div class=\"elfsight-app-09a87031-7e85-4c0e-a9a4-f367d26f0db6\" data-elfsight-app-lazy><\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "the_press_section_6hQArm": {
+      "type": "the-press-section",
+      "blocks": {
+        "press_box_KLzqVz": {
+          "type": "press-box",
+          "settings": {
+            "sub_title": "IN THE PRESS",
+            "title": "“This soldier created SickFit apparel and socks to outlast the toughest rucks!”",
+            "image": "shopify:\/\/shop_images\/image_79_1.png",
+            "press_box": "shopify:\/\/shop_images\/image_79.png"
+          }
+        },
+        "press_box_nkfbMm": {
+          "type": "press-box",
+          "settings": {
+            "sub_title": "IN THE PRESS",
+            "title": "“Always remember to live the SickFit culture and life is sick.”",
+            "image": "shopify:\/\/shop_images\/03_7bf85834-d08f-4e25-9469-2bf1211e77f2.png",
+            "press_box": "shopify:\/\/shop_images\/4_1.png"
+          }
+        },
+        "press_box_dkpLtt": {
+          "type": "press-box",
+          "settings": {
+            "sub_title": "IN THE PRESS",
+            "title": "“What started as a 12-mile ruck has grown into a full-scale apparel company, aiming to make life sick.”",
+            "image": "shopify:\/\/shop_images\/02_85cc4ea1-b3c3-4e6d-acf7-dd1d8068ecff.png",
+            "press_box": "shopify:\/\/shop_images\/3_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "press_box_KLzqVz",
+        "press_box_nkfbMm",
+        "press_box_dkpLtt"
+      ],
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/Mask_group_10.png",
+        "button_link": "#",
+        "button_text": "Shop Now",
+        "padding_top": 60,
+        "padding_bottom": 56
+      }
+    },
+    "logo_section_YrKPbJ": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_9nUwWd": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_3MyVqi": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_ypitXD": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_9bNtaW": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/WBENC_Logo1.png"
+          }
+        },
+        "logo_kNxPdi": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_tmwMnE": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_9nUwWd",
+        "logo_3MyVqi",
+        "logo_ypitXD",
+        "logo_9bNtaW",
+        "logo_kNxPdi",
+        "logo_tmwMnE"
+      ],
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "review_banner_R4xMHi",
+    "review_card_section_zYFjkf",
+    "custom_liquid_FVEqy8",
+    "the_press_section_6hQArm",
+    "logo_section_YrKPbJ"
+  ]
+}

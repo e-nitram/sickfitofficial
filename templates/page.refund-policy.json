@@ -1,0 +1,119 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "refund_policy_paQfaB": {
+      "type": "refund-policy",
+      "blocks": {
+        "list_UBb7mT": {
+          "type": "list",
+          "settings": {
+            "title": "Refund eligibility",
+            "list": "<ul><li>We only accept returns and process refunds for items purchased directly from SickFit. To be eligible for a refund, items must be unwashed, unworn, and have original tags or packaging. All items are subject to inspection.<\/li><li>A valid proof of purchase (e.g., receipt or email confirmation) and the credit card used at purchase are required for refunds. Gift receipt returns can be exchanged or refunded as store credit for the amount on the gift receipt.<\/li><li>Custom items are non-refundable. If your merchandise is damaged, contact us to resolve the issue.<\/li><li>Cash refunds are not available for online orders or returns without proof of purchase. PayPal orders are eligible for gift cards or exchanges only.<\/li><li>A $10 shipping fee will be deducted from your refund, and a printable shipping label will be provided. Once received, returns take up to 7 business days to process, with refunds to your original form of payment. Allow up to 10 days for the refund to reflect in your account, depending on your bank.<\/li><\/ul>",
+            "quote": "All returned items will be inspected."
+          }
+        },
+        "list_8Rdgh4": {
+          "type": "list",
+          "settings": {
+            "title": "Requirements for a refund",
+            "list": "<ul><li>A valid proof of purchase (original receipt or email order confirmation).<\/li><li>The credit card used for the purchase (for credit card transactions).<\/li><\/ul>",
+            "quote": ""
+          }
+        },
+        "list_BkKVLb": {
+          "type": "list",
+          "settings": {
+            "title": "Non-refundable items",
+            "list": "<ul><li>Custom pieces are non-refundable.<\/li><li>Damaged items will be handled by a representative to resolve the issue. <\/li><\/ul>",
+            "quote": ""
+          }
+        },
+        "list_nAHGGk": {
+          "type": "list",
+          "settings": {
+            "title": "Online orders",
+            "list": "<ul><li>No cash refunds for online orders.<\/li><li>Returns without a valid proof of purchase will not be refunded.<\/li><li>Online orders paid with PayPal can only be returned for a gift card or exchange.<\/li><\/ul>",
+            "quote": ""
+          }
+        }
+      },
+      "block_order": [
+        "list_UBb7mT",
+        "list_8Rdgh4",
+        "list_BkKVLb",
+        "list_nAHGGk"
+      ],
+      "settings": {
+        "heading": "Return and Refund Policy",
+        "description": "<p>We only accept returns and process refunds for items purchased from <a href=\"https:\/\/sickfit-dev.myshopify.com\/\" title=\"https:\/\/sickfit-dev.myshopify.com\/\">sickfitfitofficial.com<\/a><\/p>",
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "logo_section_rLxBWC": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_xqyn9H": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_jH7pVb": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_TjQE6y": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_pebFJf": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_zhLVPc": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_BFAFPa": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_xqyn9H",
+        "logo_jH7pVb",
+        "logo_TjQE6y",
+        "logo_pebFJf",
+        "logo_zhLVPc",
+        "logo_BFAFPa"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 76
+      }
+    }
+  },
+  "order": [
+    "main",
+    "refund_policy_paQfaB",
+    "logo_section_rLxBWC"
+  ]
+}

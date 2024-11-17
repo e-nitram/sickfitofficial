@@ -1,0 +1,733 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .formm-submitted .field__input{
+    display:none;
+}
+{% endstyle %}
+
+<article class="article-template">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        <div class="page-width page-width--narrow">
+          {% render block %}
+        </div>
+      {%- when 'featured_image' -%}
+        {%- if article.image -%}
+          <div
+            class="article-template__hero-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <div
+              class="article-template__hero-{{ block.settings.image_height }} media"
+              {% if block.settings.image_height == 'adapt' and article.image %}
+                style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+              {% endif %}
+            >
+              <img
+                srcset="
+                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
+                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
+                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
+                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
+                  {{ article.image | image_url }} {{ article.image.width }}w
+                "
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+                src="{{ article.image | image_url: width: 1100 }}"
+                loading="eager"
+                fetchpriority="high"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.image.alt | escape }}"
+              >
+            </div>
+          </div>
+        {%- endif -%}
+
+      {%- when 'title' -%}
+        <header
+          class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <h1
+            class="article-template__title"
+          >
+            {{ article.title | escape }}
+          </h1>
+          {% comment %}
+          {%- if block.settings.blog_show_date -%}
+            <span class="circle-divider caption-with-letter-spacing">
+              {{- article.published_at | time_tag: format: 'date' -}}
+            </span>
+          {%- endif -%}
+          {%- if block.settings.blog_show_author -%}
+            <span class="caption-with-letter-spacing">
+              <span>{{ article.author }}</span>
+            </span>
+          {%- endif -%}
+          {% endcomment %}
+          <!-------------------->
+          <div class="author-details">
+            <div class="author-img-name">
+              <img src="https://cdn.shopify.com/s/files/1/0601/6955/1949/files/14a402eb12b572c341cc0cfeb4392ce8.png?v=1725278875" alt="author-image">
+              {%- if block.settings.blog_show_author -%}
+                <span class="caption-with-letter-spacing">
+                  <span>{{ article.author }}</span>
+                </span>
+              {%- endif -%}
+            </div>
+            <div class="public-date">
+              <span class="public-text">Published</span>
+              {%- if block.settings.blog_show_date -%}
+               <span class="circle-divider caption-with-letter-spacing">
+                 {{- article.published_at | time_tag: format: 'date' -}}
+               </span>
+             {%- endif -%}
+             <span class="reading-time">Reading Time:  6 minutes</span>
+            </div>
+          </div>
+      <!-------------------->
+        </header>
+
+      {%- when 'content' -%}
+        <div
+          class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {{ article.content }}
+        </div>
+
+      {%- when 'share' -%}
+       {% comment %}
+        <div
+          class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {% assign share_url = request.origin | append: article.url %}
+          {% render 'share-button', block: block, share_link: share_url %}
+        </div>
+      {% endcomment %}
+        <div class="share-blog-url">
+          <h4 class="share-blog-text">Share it</h4>
+          <sapn class="hr-line"></sapn>
+          <div class="share-to-list">
+              <a id="linkedin" target="_blank" href="">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.0781 0H2.03516C1.21875 0 0.558594 0.644531 0.558594 1.44141V18.5547C0.558594 19.3516 1.21875 20 2.03516 20H19.0781C19.8945 20 20.5586 19.3516 20.5586 18.5586V1.44141C20.5586 0.644531 19.8945 0 19.0781 0ZM6.49219 17.043H3.52344V7.49609H6.49219V17.043ZM5.00781 6.19531C4.05469 6.19531 3.28516 5.42578 3.28516 4.47656C3.28516 3.52734 4.05469 2.75781 5.00781 2.75781C5.95703 2.75781 6.72656 3.52734 6.72656 4.47656C6.72656 5.42188 5.95703 6.19531 5.00781 6.19531ZM17.6016 17.043H14.6367V12.4023C14.6367 11.2969 14.6172 9.87109 13.0937 9.87109C11.5508 9.87109 11.3164 11.0781 11.3164 12.3242V17.043H8.35547V7.49609H11.1992V8.80078H11.2383C11.6328 8.05078 12.6016 7.25781 14.043 7.25781C17.0469 7.25781 17.6016 9.23438 17.6016 11.8047V17.043Z" fill="#211E23"/>
+                </svg>
+                </a>
+              <a id="instagram" target="_blank" href="">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5605 1.80113C13.2329 1.80113 13.5494 1.81285 14.6004 1.85974C15.5772 1.90272 16.1046 2.06681 16.4562 2.20356C16.9212 2.38328 17.2572 2.60207 17.6049 2.9498C17.9565 3.30143 18.1714 3.63352 18.3511 4.09846C18.4879 4.45009 18.652 4.98144 18.695 5.95429C18.7418 7.00918 18.7536 7.32565 18.7536 9.99414C18.7536 12.6665 18.7418 12.983 18.695 14.034C18.652 15.0107 18.4879 15.5382 18.3511 15.8898C18.1714 16.3548 17.9526 16.6908 17.6049 17.0385C17.2533 17.3901 16.9212 17.605 16.4562 17.7847C16.1046 17.9215 15.5732 18.0856 14.6004 18.1285C13.5455 18.1754 13.229 18.1871 10.5605 18.1871C7.88815 18.1871 7.57168 18.1754 6.5207 18.1285C5.54394 18.0856 5.0165 17.9215 4.66487 17.7847C4.19993 17.605 3.86393 17.3862 3.5162 17.0385C3.16457 16.6869 2.94969 16.3548 2.76996 15.8898C2.63322 15.5382 2.46912 15.0068 2.42615 14.034C2.37926 12.9791 2.36754 12.6626 2.36754 9.99414C2.36754 7.32174 2.37926 7.00527 2.42615 5.95429C2.46912 4.97753 2.63322 4.45009 2.76996 4.09846C2.94969 3.63352 3.16848 3.29752 3.5162 2.9498C3.86783 2.59816 4.19993 2.38328 4.66487 2.20356C5.0165 2.06681 5.54785 1.90272 6.5207 1.85974C7.57168 1.81285 7.88815 1.80113 10.5605 1.80113ZM10.5605 0C7.84517 0 7.50526 0.011721 6.43865 0.0586052C5.37594 0.105489 4.64533 0.277398 4.01239 0.52354C3.35211 0.781403 2.79341 1.12131 2.23861 1.68002C1.67991 2.23481 1.34 2.79351 1.08213 3.44989C0.835992 4.08674 0.664083 4.81344 0.617199 5.87615C0.570315 6.94667 0.558594 7.28658 0.558594 10.002C0.558594 12.7173 0.570315 13.0572 0.617199 14.1239C0.664083 15.1866 0.835992 15.9172 1.08213 16.5501C1.34 17.2104 1.67991 17.7691 2.23861 18.3239C2.79341 18.8787 3.35211 19.2225 4.00849 19.4765C4.64533 19.7226 5.37203 19.8945 6.43474 19.9414C7.50136 19.9883 7.84127 20 10.5566 20C13.272 20 13.6119 19.9883 14.6785 19.9414C15.7412 19.8945 16.4719 19.7226 17.1048 19.4765C17.7612 19.2225 18.3199 18.8787 18.8747 18.3239C19.4295 17.7691 19.7733 17.2104 20.0272 16.554C20.2734 15.9172 20.4453 15.1905 20.4922 14.1278C20.5391 13.0611 20.5508 12.7212 20.5508 10.0059C20.5508 7.29049 20.5391 6.95058 20.4922 5.88396C20.4453 4.82125 20.2734 4.09064 20.0272 3.45771C19.7811 2.79351 19.4412 2.23481 18.8825 1.68002C18.3277 1.12522 17.769 0.781403 17.1126 0.527447C16.4758 0.281305 15.7491 0.109396 14.6864 0.0625122C13.6158 0.011721 13.2759 0 10.5605 0Z" fill="#000100"/>
+                <path d="M10.5605 4.86423C7.72406 4.86423 5.42283 7.16546 5.42283 10.002C5.42283 12.8384 7.72406 15.1397 10.5605 15.1397C13.397 15.1397 15.6983 12.8384 15.6983 10.002C15.6983 7.16546 13.397 4.86423 10.5605 4.86423ZM10.5605 13.3346C8.72034 13.3346 7.22787 11.8422 7.22787 10.002C7.22787 8.16175 8.72034 6.66927 10.5605 6.66927C12.4008 6.66927 13.8932 8.16175 13.8932 10.002C13.8932 11.8422 12.4008 13.3346 10.5605 13.3346Z" fill="#000100"/>
+                <path d="M17.1009 4.66108C17.1009 5.32527 16.5617 5.86054 15.9014 5.86054C15.2372 5.86054 14.702 5.32137 14.702 4.66108C14.702 3.99689 15.2411 3.46163 15.9014 3.46163C16.5617 3.46163 17.1009 4.00079 17.1009 4.66108Z" fill="#000100"/>
+                </svg>
+                </a>
+              <a id="xtwitter" target="_blank" href="">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.3098 0.960938H19.3766L12.6765 8.61866L20.5586 19.0391H14.387L9.55317 12.7192L4.02218 19.0391H0.953532L8.1199 10.8483L0.558594 0.960938H6.88687L11.2562 6.7376L16.3098 0.960938ZM15.2334 17.2035H16.9328L5.9635 2.70015H4.13992L15.2334 17.2035Z" fill="#211E23"/>
+                </svg>
+                </a>
+              <a id="facebook" target="_blank" href="">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5584 0C5.0357 0 0.558594 4.49365 0.558594 10.0367C0.558594 14.7436 3.78733 18.6932 8.14284 19.778V13.104H6.08088V10.0367H8.14284V8.7151C8.14284 5.29899 9.68321 3.7156 13.0247 3.7156C13.6583 3.7156 14.7515 3.84046 15.1987 3.96491V6.74509C14.9627 6.7202 14.5527 6.70775 14.0435 6.70775C12.404 6.70775 11.7704 7.33123 11.7704 8.95196V10.0367H15.0367L14.4755 13.104H11.7704V20C16.7219 19.3998 20.5586 15.1683 20.5586 10.0367C20.5582 4.49365 16.0811 0 10.5584 0Z" fill="#211E23"/>
+                </svg>
+                </a>
+              <a id="copyButton" href="">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.519 9.9132L14.4494 6.98281C15.46 5.97221 15.46 4.3337 14.4494 3.3231C13.4388 2.3125 11.8002 2.3125 10.7896 3.3231L7.85926 6.25349L6.71665 5.11088C6.62701 5.02124 6.62701 4.87591 6.71665 4.78627L9.57407 1.92885C11.302 0.200899 14.1036 0.200898 15.8315 1.92885C17.5595 3.6568 17.5595 6.45836 15.8315 8.18631L12.9741 11.0437C12.8845 11.1334 12.7391 11.1334 12.6495 11.0437L11.519 9.9132ZM6.07387 8.03888L3.16894 10.9438C2.15833 11.9544 2.15833 13.5929 3.16894 14.6035C4.17954 15.6141 5.81805 15.6141 6.82865 14.6035L9.73358 11.6986L10.8662 12.8312C10.9558 12.9208 10.9558 13.0662 10.8662 13.1558L7.95099 16.071C6.22189 17.8001 3.41848 17.8001 1.68939 16.071C-0.0397003 14.3419 -0.0397003 11.5385 1.68939 9.80939L4.60458 6.8942C4.69422 6.80456 4.83955 6.80456 4.92919 6.8942L6.07387 8.03888ZM5.84098 10.6209L10.3856 6.0763C10.4752 5.98666 10.6206 5.98666 10.7102 6.0763L11.7247 7.09073C11.8143 7.18037 11.8143 7.3257 11.7247 7.41534L7.18002 11.96C7.09038 12.0496 6.94505 12.0496 6.85541 11.96L5.84098 10.9455C5.75134 10.8559 5.75134 10.7106 5.84098 10.6209Z" fill="#211E23"/>
+                </svg>
+              </a>
+          </div>
+        </div>
+     
+        <!-- ---------------------- -->
+      {%- when 'newsletter' -%}
+        <div class="page-width">
+          <div class="article-newsletter" id="contact_form">
+            <div class="newsletter-flex">
+              <div class="newsletter-blog-text col-6">
+                <h2 class="newsletter-title">{{ block.settings.heading }}</h2>
+                <div class="description">{{ block.settings.description }}</div>
+              </div>
+              <div {{ block.shopify_attributes }} class="newsletter-form-blog col-6">
+                {% form 'customer', class: 'newsletter-form', novalidate: 'novalidate' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+  <div
+    class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+      style="--animation-order: {{ forloop.index }};"
+    {% endif %}
+  >
+    <div class="field">
+      <input
+        type="email"
+        name="contact[email]"
+        class="field__input"
+        value="{{ form.email }}"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        placeholder="name@example.com"
+        id="newsletter-email"
+      >
+      <label class="field__label">{{ 'newsletter.label' | t }}</label>
+      <button
+        type="submit"
+        class="newsletter-form__button field__button"
+        name="commit"
+        aria-label="{{ 'newsletter.button_label' | t }}"
+        disabled
+        id="newsletter-submit"
+      >
+        {% render 'icon-arrow' %}
+      </button>
+    </div>
+    <small class="newsletter-error newsletter-form__message form__message" style="display:none;">
+      Please enter a valid email address.
+    </small>
+  </div>
+
+  {%- if form.posted_successfully? -%}
+    <h3
+      class="newsletter-form__message newsletter-form__message--success form__message"
+      tabindex="-1"
+      autofocus
+    >
+      <div class="news-letter-flex">
+        {% render 'main-icon' %}
+        <div class="success-text">
+          <h4>You’re all set!</h4>
+          <p>Thanks for subscribing!</p>
+        </div>
+    </div>
+    </h3>
+  {%- endif -%}
+{% endform %}
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="page-width">
+     <!----------------->
+      {% include 'relatedblogs' %}
+      <!----------------->
+
+     </div>
+
+      
+    {%- endcase -%}
+  {%- endfor -%}
+
+  <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+      <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+    </a>
+  </div>
+  {%- if blog.comments_enabled? -%}
+    <div class="article-template__comment-wrapper background-secondary">
+      <div
+        id="comments"
+        class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      >
+        {%- if article.comments_count > 0 -%}
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+
+          <h2 id="Comments-{{ article.id }}" tabindex="-1">
+            {{ 'blogs.article.comments' | t: count: article.comments_count }}
+          </h2>
+          {% paginate article.comments by 5 %}
+            <div class="article-template__comments">
+              {%- if comment.status == 'pending' and comment.content -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                  </footer>
+                </article>
+              {%- endif -%}
+
+              {%- for comment in article.comments -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span
+                    ><span class="caption-with-letter-spacing">
+                      {{- comment.created_at | time_tag: format: 'date' -}}
+                    </span>
+                  </footer>
+                </article>
+              {%- endfor -%}
+              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+          {% endpaginate %}
+        {%- endif -%}
+        {% form 'new_comment', article %}
+          {%- liquid
+            assign post_message = 'blogs.article.success'
+            if blog.moderated? and comment.status == 'unapproved'
+              assign post_message = 'blogs.article.success_moderated'
+            endif
+          -%}
+          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+          {%- if form.errors -%}
+            <div class="form__message" role="alert">
+              <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
+                {% render 'icon-error' %}
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h3>
+            </div>
+            <ul class="form-status-list caption-large">
+              {%- for field in form.errors -%}
+                <li>
+                  <a href="#CommentForm-{{ field }}" class="link">
+                    {%- if form.errors.translated_fields[field] contains 'author' -%}
+                      {{ 'blogs.article.name' | t }}
+                    {%- elsif form.errors.translated_fields[field] contains 'body' -%}
+                      {{ 'blogs.article.message' | t }}
+                    {%- else -%}
+                      {{ form.errors.translated_fields[field] }}
+                    {%- endif -%}
+                    {{ form.errors.messages[field] }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- elsif form.posted_successfully? -%}
+            <div class="form-status-list form__message" role="status">
+              <h3 class="form-status" tabindex="-1" autofocus>
+                {% render 'icon-success' %}
+                {{ post_message | t }}
+              </h3>
+            </div>
+          {%- endif -%}
+
+          <div
+            {% if blog.moderated? == false %}
+              class="article-template__comments-fields"
+            {% endif %}
+          >
+            <div class="article-template__comment-fields">
+              <div class="field field--with-error">
+                <input
+                  type="text"
+                  name="comment[author]"
+                  id="CommentForm-author"
+                  class="field__input"
+                  autocomplete="name"
+                  value="{{ form.author }}"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'author' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-author-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.name' | t }}"
+                >
+                <label class="field__label" for="CommentForm-author">
+                  {{- 'blogs.article.name' | t }}
+                  <span aria-hidden="true">*</span></label
+                >
+                {%- if form.errors contains 'author' -%}
+                  <small id="CommentForm-author-error">
+                    <span class="form__message">
+                      {%- render 'icon-error' -%}
+                      {{- 'blogs.article.name' | t }}
+                      {{ form.errors.messages.author }}.</span
+                    >
+                  </small>
+                {%- endif -%}
+              </div>
+              <div class="field field--with-error">
+                <input
+                  type="email"
+                  name="comment[email]"
+                  id="CommentForm-email"
+                  autocomplete="email"
+                  class="field__input"
+                  value="{{ form.email }}"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-email-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.email' | t }}"
+                >
+                <label class="field__label" for="CommentForm-email">
+                  {{- 'blogs.article.email' | t }}
+                  <span aria-hidden="true">*</span></label
+                >
+                {%- if form.errors contains 'email' -%}
+                  <small id="CommentForm-email-error">
+                    <span class="form__message">
+                      {%- render 'icon-error' -%}
+                      {{- 'blogs.article.email' | t }}
+                      {{ form.errors.messages.email }}.</span
+                    >
+                  </small>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="field field--with-error">
+              <textarea
+                rows="5"
+                name="comment[body]"
+                id="CommentForm-body"
+                class="text-area field__input"
+                aria-required="true"
+                required
+                {% if form.errors contains 'body' %}
+                  aria-invalid="true"
+                  aria-describedby="CommentForm-body-error"
+                {% endif %}
+                placeholder="{{ 'blogs.article.message' | t }}"
+              >{{ form.body }}</textarea>
+              <label class="form__label field__label" for="CommentForm-body">
+                {{- 'blogs.article.message' | t }}
+                <span aria-hidden="true">*</span></label
+              >
+            </div>
+            {%- if form.errors contains 'body' -%}
+              <small id="CommentForm-body-error">
+                <span class="form__message">
+                  {%- render 'icon-error' -%}
+                  {{- 'blogs.article.message' | t }}
+                  {{ form.errors.messages.body }}.</span
+                >
+              </small>
+            {%- endif -%}
+          </div>
+          {%- if blog.moderated? -%}
+            <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
+          {%- endif -%}
+          <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
+        {% endform %}
+      </div>
+    </div>
+  {%- endif -%}
+</article>
+
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
+
+
+
+<!--------------------->
+<script>
+  // linkedin
+document.getElementById('linkedin').addEventListener('click', function() {
+    var currentPageUrl = window.location.href;
+    shareOnLinkedIn(currentPageUrl);
+});
+function shareOnLinkedIn(url) {
+    var linkedInShareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+    window.open(linkedInShareUrl, '_blank');
+}
+// linkedin end
+// inatgram 
+    document.getElementById('instagram').addEventListener('click', function() {
+    var currentPageUrl = window.location.href;
+    var message = "Check out this link: " + currentPageUrl;
+    shareOnWhatsApp(message);
+});
+function shareOnWhatsApp(message) {
+    var whatsappUrl = "https://www.instagram.com/" + encodeURIComponent(message);
+    window.open(whatsappUrl, '_blank');
+}
+// instagram end
+// Twitter
+document.getElementById('xtwitter').addEventListener('click', function() {
+    var currentPageUrl = window.location.href;
+    var tweetText = "Check out this link: " + currentPageUrl;
+    shareOnTwitter(tweetText);
+});
+function shareOnTwitter(text) {
+    var twitterUrl = "https://twitter.com/intent/tweet?url=&text=" + encodeURIComponent(text);
+    window.open(twitterUrl, '_blank');
+}
+// Twitter end
+// Facebook 
+document.getElementById('facebook').addEventListener('click', function() {
+    var currentPageUrl = window.location.href;
+    shareOnFacebook(currentPageUrl);
+});
+function shareOnFacebook(url) {
+    var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+    window.open(facebookUrl, '_blank');
+}
+// Facebook end
+// copy url only 
+document.getElementById('copyButton').addEventListener('click', function() {
+    var currentPageUrl = window.location.href;
+    copyToClipboard(currentPageUrl);
+});
+function copyToClipboard(text) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}
+</script>
+                
+<!----------newsletters----------->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.newsletter-form');
+    const emailField = form.querySelector('input[name="contact[email]"]');
+    const submitButton = form.querySelector('.newsletter-form__button');
+    const errorMessage = form.querySelector('.newsletter-error');
+    const successMessage = form.querySelector('.newsletter-form__message--success');
+    const contactFormSection = document.querySelector('#contact_form');
+    
+    // Existing duplicate email message element
+    let duplicateEmailMessage = form.querySelector('.has-duplicate-error-message');
+
+    // If the duplicate email message doesn't exist, create it
+    if (!duplicateEmailMessage) {
+        duplicateEmailMessage = document.createElement('small');
+        duplicateEmailMessage.classList.add('newsletter-error', 'newsletter-form__message', 'form__message', 'has-duplicate-error-message');
+        duplicateEmailMessage.style.display = 'none';
+        duplicateEmailMessage.innerHTML = `<svg class="error-icon" style="display: none;">...</svg> This email is already subscribed.`;
+        form.appendChild(duplicateEmailMessage);
+    }
+
+    function hideInputFields() {
+        form.querySelectorAll('.newsletter-form__field-wrapper .field__input').forEach(input => {
+            input.style.display = 'none';
+        });
+    }
+
+    function resetForm() {
+        form.querySelectorAll('.newsletter-form__field-wrapper .field__input').forEach(input => {
+            input.style.display = ''; // Reset the display style to show input fields
+        });
+        if (successMessage) {
+            successMessage.style.display = 'none'; // Hide success message on reload
+        }
+        duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message on reset
+    }
+
+    const isHardReload = performance.getEntriesByType('navigation')[0].type === 'reload';
+
+    if (isHardReload) {
+        localStorage.removeItem('formSubmitted');
+        localStorage.removeItem('duplicateEmailError'); // Clear the duplicate email error on hard reload
+        resetForm(); // Reset form to its normal state after hard reload
+    }
+
+    if (successMessage && successMessage.style.display !== 'none') {
+        // Success message is displayed, hide duplicate email message
+        duplicateEmailMessage.style.display = 'none';
+        hideInputFields();
+    } else if (localStorage.getItem('formSubmitted') === 'true' && !isHardReload) {
+        hideInputFields();
+        if (successMessage) {
+            successMessage.style.display = 'block'; // Show success message if form was submitted
+        }
+        duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message
+    }
+
+    if (localStorage.getItem('duplicateEmailError') === 'true') {
+        duplicateEmailMessage.style.display = 'block';
+        submitButton.disabled = true; // Disable the submit button if duplicate email error persists
+    }
+
+    function validateEmail() {
+        const emailValue = emailField.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValid = emailPattern.test(emailValue);
+
+        if (emailValue === '') {
+            errorMessage.style.display = 'none';
+            duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message when input is cleared
+            submitButton.disabled = true;
+            emailField.classList.add('has-error');
+        } else if (!isValid) {
+            errorMessage.style.display = 'block';
+            duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message for invalid format
+            submitButton.disabled = true;
+            emailField.classList.add('has-error');
+        } else {
+            errorMessage.style.display = 'none';
+            submitButton.disabled = false;
+            emailField.classList.remove('has-error');
+            localStorage.removeItem('duplicateEmailError'); // Reset duplicate error state when valid email is entered
+            duplicateEmailMessage.style.display = 'none'; // Hide the duplicate error when a valid email is entered
+        }
+    }
+
+    emailField.addEventListener('input', validateEmail);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        validateEmail();
+
+        if (!submitButton.disabled) {
+            const formData = new FormData(form);
+
+            // Reset the duplicate email message before each submission
+            duplicateEmailMessage.style.display = 'none';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
+            })
+            .then(response => {
+                if (response.status === 422) {
+                    // Duplicate email error
+                    duplicateEmailMessage.style.display = 'block'; // Show duplicate error
+                    localStorage.setItem('duplicateEmailError', 'true'); // Store duplicate email error in localStorage
+                } else if (response.ok) {
+                    hideInputFields();
+                    if (successMessage) {
+                        successMessage.style.display = 'block'; // Show success message
+                    }
+                    duplicateEmailMessage.style.display = 'none'; // Hide duplicate email error message
+                    localStorage.setItem('formSubmitted', 'true'); // Mark form as submitted in localStorage
+
+                    // Scroll to #contact_form with offset
+                    const scrollOffset = 300; // Adjust this value for the desired offset
+                    const topPos = contactFormSection.getBoundingClientRect().top + window.scrollY - scrollOffset;
+                    
+                    window.scrollTo({
+                        top: topPos,
+                        behavior: 'smooth'
+                    });
+
+                    return;
+                } else {
+                    // Handle other errors if necessary
+                    console.error('Unexpected error:', response);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    });
+});
+
+</script>
+<!--------------------->
+
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "t:sections.main-article.blocks.featured_image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
+            },
+            {
+              "value": "small",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
+            }
+          ],
+          "default": "adapt",
+          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label",
+          "info": "t:sections.main-article.blocks.featured_image.settings.image_height.info"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-article.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-article.blocks.share.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "t:sections.main-article.blocks.share.settings.text.label",
+          "default": "t:sections.main-article.blocks.share.settings.text.default"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.featured_image_info.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.title_info.content"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "limit": 1,
+       "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+         {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

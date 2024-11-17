@@ -1,0 +1,311 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class="contact-description">
+            {%- if section.settings.heading != blank -%}
+              <h1 class="contact-title">
+                {{ section.settings.heading }}
+              </h1>
+            {%- endif -%}
+            {%- if section.settings.description != blank -%}
+              <div class="contact-text">
+                {{ section.settings.description }}
+              </div>
+            {%- endif -%}
+        </div>
+        <div class="row">
+             <div class="col-6">
+               <div class="contact-image">
+                 {%- if section.settings.image1 != blank -%}
+                   <div class="single-image">
+                     <img src="{{ section.settings.image1 | img_url: '' }}" alt="contact-image"> 
+                   </div>
+                 {%- endif -%}
+                 {%- if section.settings.image2 != blank -%}
+                   <div class="right-side-image">
+                     <img src="{{ section.settings.image2 | img_url: '' }}" alt="contact-image"> 
+                     <img src="{{ section.settings.image3 | img_url: '' }}" alt="contact-image"> 
+                   </div>
+                 {%- endif -%}
+               </div>
+             </div>
+             <div class="col-6">
+                <div class="contact-form">
+  {%- liquid
+  assign contact_form_class = 'isolate'
+  if settings.animations_reveal_on_scroll
+  assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+  endif
+  -%}
+
+  {%- form 'contact', id: 'ContactForm', class: contact_form_class, novalidate: 'novalidate' -%}
+    {%- if form.posted_successfully? -%}
+    <div class="contact-form-success">
+      <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        {{ 'templates.contact.form.post_success' | t }}
+      </h2>
+      <p>We’ll be in touch soon.</p>
+      {% render 'main-icon' %}
+    </div>
+    {%- endif -%}
+
+    <!-- Name Field -->
+    <div class="field">
+      <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+      <input class="field__input" autocomplete="name" type="text" id="ContactForm-name" name="contact[name]" placeholder="John Doe" aria-required="true">
+      <small class="contact__field-error" id="ContactForm-name-error" style="color: red; display: none;">*Please enter your name</small>
+    </div>
+
+    <!-- Email Field -->
+    <div class="field field--with-error">
+      <label class="field__label" for="ContactForm-email">{{ 'templates.contact.form.email' | t }}</label>
+      <input autocomplete="email" type="email" id="ContactForm-email" class="field__input" name="contact[email]" spellcheck="false" autocapitalize="off" aria-required="true" placeholder="name@example.com">
+      <small class="contact__field-error" id="ContactForm-email-error" style="color: red; display: none;">*Please enter a valid email address</small>
+    </div>
+
+    <!-- Phone Field -->
+    <div class="field">
+      <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+      <input type="tel" id="ContactForm-phone" class="field__input" autocomplete="tel" name="contact[phone]" pattern="[0-9\-]*" placeholder="+1 123 456 789">
+    </div>
+
+    <!-- Message Field -->
+    <div class="field">
+      <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
+      <textarea rows="10" id="ContactForm-body" class="text-area field__input" name="contact[message]" placeholder="Type your message here..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="contact__button">
+      <button type="submit" class="main-btn button" id="ContactForm-submit">
+        <span>{{ 'templates.contact.form.send' | t }}</span>
+      </button>
+    </div>
+  {%- endform -%}
+</div>
+           </div>
+         </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('ContactForm');
+
+    contactForm.addEventListener('submit', function (event) {
+      const nameInput = document.getElementById('ContactForm-name');
+      const nameValue = nameInput.value.trim();
+      const nameErrorElement = document.getElementById('name-error');
+
+      // Clear previous error messages
+      nameErrorElement.style.display = 'none';
+      nameErrorElement.textContent = '';
+
+      // Flag to track validation status
+      let isValid = true;
+
+      // Validate name input
+      if (nameValue === '') {
+        // Check if the name field is empty
+        event.preventDefault(); // Prevent form submission
+        nameErrorElement.textContent = 'Name is required.'; // Set error message
+        nameErrorElement.style.display = 'block'; // Show error message
+        nameInput.classList.add('error'); // Add error class for styling
+        isValid = false; // Mark as invalid
+      } else if (!/^[A-Za-z\s]+$/.test(nameValue)) {
+        // Check for invalid characters
+        event.preventDefault(); // Prevent form submission
+        nameErrorElement.textContent = 'Name can only contain letters and spaces.'; // Set error message
+        nameErrorElement.style.display = 'block'; // Show error message
+        nameInput.classList.add('error'); // Add error class for styling
+        isValid = false; // Mark as invalid
+      } else {
+        nameInput.classList.remove('error'); // Clear error class if valid
+      }
+
+      // Only proceed to human verification if the form is valid
+      if (!isValid) {
+        event.preventDefault(); // Prevent form submission
+      } else {
+        // Here, trigger human verification (e.g., reCAPTCHA)
+        // For example, if using Google reCAPTCHA:
+        // grecaptcha.execute();
+      }
+    });
+  });
+</script> -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('ContactForm');
+  const nameField = document.getElementById('ContactForm-name');
+  const emailField = document.getElementById('ContactForm-email');
+  const submitButton = document.getElementById('ContactForm-submit');
+  const nameError = document.getElementById('ContactForm-name-error');
+  const emailError = document.getElementById('ContactForm-email-error');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Initialize error display states and disable submit button initially
+  nameError.style.display = 'none';
+  emailError.style.display = 'none';
+  submitButton.disabled = true; // Disable button on page load
+
+  // Function to validate name
+  function validateName() {
+    if (nameField.value.trim() === '') {
+      nameError.textContent = '*Please enter your name';
+      nameError.style.display = 'block';
+      nameField.classList.add('error');
+      return false;
+    } else {
+      nameError.style.display = 'none';
+      nameField.classList.remove('error');
+      return true;
+    }
+  }
+
+  // Function to validate email
+  function validateEmail() {
+    const emailValue = emailField.value.trim();
+    if (emailValue === '' || !emailPattern.test(emailValue)) {
+      emailError.textContent = '*Please enter a valid email address';
+      emailError.style.display = 'block';
+      emailField.classList.add('error');
+      return false;
+    } else {
+      emailError.style.display = 'none';
+      emailField.classList.remove('error');
+      return true;
+    }
+  }
+
+  // Function to validate the entire form and toggle submit button
+  function validateForm() {
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    
+    // Enable submit button only if all fields are valid
+    submitButton.disabled = !(isNameValid && isEmailValid);
+    
+    return isNameValid && isEmailValid;
+  }
+
+  // Real-time validation on name input
+  nameField.addEventListener('input', function() {
+    validateName();
+    // Only validate the form state when both fields have been interacted with
+    if (emailField.value.trim() !== '') {
+      validateForm();
+    }
+  });
+
+  // Real-time validation on email input
+  emailField.addEventListener('input', function() {
+    validateEmail();
+    // Only validate the form state when both fields have been interacted with
+    if (nameField.value.trim() !== '') {
+      validateForm();
+    }
+  });
+
+  // Form submission validation
+  form.addEventListener('submit', function(event) {
+    const isValid = validateForm();
+
+    // Prevent form submission if validation fails
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image3"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.name"
+    }
+  ]
+}
+{% endschema %}

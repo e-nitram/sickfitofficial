@@ -1,0 +1,120 @@
+/***************15-08-24*****************/
+.newsletter-form__field-wrapper .field__input {
+    min-height: 70px;
+    border-radius:8px;
+}
+.newsletter-form__field-wrapper .field__label {
+    top: 50%;
+    transform: translateY(-50%);
+   left:24px;
+}
+.newsletter-form__field-wrapper .newsletter-form__button{
+  right:11px;
+}
+.newsletter-form__field-wrapper .newsletter-form__button .icon {
+    width: 4.4rem;
+    height: 1.6rem;
+}
+.newsletter-form__field-wrapper .newsletter-form__button .icon path {
+    fill:#E72027;
+}
+.newsletter-form__field-wrapper .field__input {
+    padding-right: 5rem;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 24px;
+}
+ .newsletter-form__field-wrapper .field__input:focus~.field__label{
+    top:1.1rem;;
+ }
+
+ .newsletter-error{
+   font-size:12px;
+   line-height:20px;
+   color:#F2494E;
+   font-weight:600;
+   margin-top:5px !important;
+   display: none;
+ }
+
+.sumbit-newsletters .newsletter-form__field-wrapper {
+  display:none;
+}
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form {
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 36rem;
+  }
+}
+
+.newsletter-form__field-wrapper {
+  width: 100%;
+}
+
+.newsletter-form__field-wrapper .field__input {
+  padding-right: 5rem;
+}
+
+.newsletter-form__field-wrapper .field {
+  z-index: 0;
+}
+
+.newsletter-form__message {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.newsletter-form__message--success {
+  margin-top: 2rem;
+}
+.newsletter-form__message--success .news-letter-flex{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
+@media screen and (min-width: 750px) {
+  .newsletter-form__message {
+    justify-content: flex-start;
+  }
+}
+
+.newsletter-form__button {
+  width: 4.4rem;
+  margin: 0;
+  right: var(--inputs-border-width);
+  top: 0;
+  height: 100%;
+  z-index: 2;
+}
+
+.newsletter-form__button:focus-visible {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:focus {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:not(:focus-visible):not(.focused) {
+  box-shadow: inherit;
+  background-color: inherit;
+}
+
+.newsletter-form__button .icon {
+  width: 1.5rem;
+}

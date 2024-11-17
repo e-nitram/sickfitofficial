@@ -1,0 +1,480 @@
+<!--------- collaborations-section --------------->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+
+<section class="collaboration-section section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.heading  != blank -%}
+      <h2 class="main-title">{{ section.settings.heading }}</h2>
+    {% endif %}
+      <div class="row">
+        {% for block in section.blocks %}
+           {% case block.type %}
+             {% when 'image' %}
+               <div class="col-6">
+                  <div class="collabration-image">
+                     <div class="signle-image">
+                       <div class="product-card">
+                           {%- if block.settings.product_btn1  != blank -%}
+                              <a href="{{ block.settings.product_btn1 }}"></a>
+                            {% endif %}
+                           {%- if block.settings.feature_image1 != blank -%}
+                             <img src="{{ block.settings.feature_image1| img_url: '' }}" alt="feartue-image">
+                           {% endif %}
+                           <div class="product-description">
+                             {%- if block.settings.product_title1 != blank -%}
+                                <h4 class="product-title">{{ block.settings.product_title1 }}</h4>
+                             {% endif %}
+                             {%- if block.settings.product_price1  != blank -%}
+                                <h6 class="product-price">{{ block.settings.product_price1 }}</h6>
+                             {% endif %}
+                            </div>
+                         </div>
+                      </div>
+                       <div class="right-side-image">
+                         <div class="product-card">
+                           {%- if block.settings.product_btn2  != blank -%}
+                              <a href="{{ block.settings.product_btn2 }}"></a>
+                            {% endif %}
+                           {%- if block.settings.feature_image2  != blank -%}
+                             <img src="{{ block.settings.feature_image2| img_url: '' }}" alt="feartue-image">
+                           {% endif %}
+                           <div class="product-description">
+                             {%- if block.settings.product_title2 != blank -%}
+                                <h4 class="product-title">{{ block.settings.product_title2 }}</h4>
+                             {% endif %}
+                             {%- if block.settings.product_price2  != blank -%}
+                                <h6 class="product-price">{{ block.settings.product_price2 }}</h6>
+                             {% endif %}
+                            </div>
+                         </div>
+                         <div class="product-card">
+                           {%- if block.settings.product_btn3 != blank -%}
+                             <a href="{{ block.settings.product_btn3 }}"></a>
+                           {% endif %}
+                           {%- if block.settings.feature_image3  != blank -%}
+                             <img src="{{ block.settings.feature_image3 | img_url: '' }}" alt="feartue-image">
+                           {% endif %}
+                           <div class="product-description">
+                             {%- if block.settings.product_title3  != blank -%}
+                               <h4 class="product-title">{{ block.settings.product_title3 }}</h4>
+                             {% endif %}
+                             {%- if block.settings.product_price3  != blank -%}
+                                <h6 class="product-price">{{ block.settings.product_price3 }}</h6>
+                              {% endif %}
+                            </div>
+                         </div>
+                       </div>
+                  </div>
+               </div>
+             {% when 'text' %}
+               <div class="col-6">
+                 <div class="collaborations-content">
+                   {%- if block.settings.sub_title  != blank -%}
+                     <h6 class="sub-title">{{ block.settings.sub_title}}</h6>
+                    {% endif %}
+                   {%- if block.settings.title != blank -%}
+                     <h3 class="title">{{ block.settings.title }}</h3>
+                   {% endif %}
+                    {%- if block.settings.description  != blank -%}
+                       <div class="collaborations-text">
+                         {{ block.settings.description }}
+                       </div>
+                     {% endif %}
+                     {%- if block.settings.button_link  != blank -%}
+                       <a href="{{ block.settings.button_link }}" class="main-btn btn-black"><span>{{ block.settings.button_text }}</span></a>
+                     {% endif %}
+                   
+                 </div>
+               </div>
+            {% endcase %}
+        {% endfor %}
+      </div>
+  </div>
+</section>
+
+{% style %}
+  section.collaboration-section .page-width {
+    padding: 0px 85px;
+}
+ .collaboration-section .row {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin:0px -20px;
+}
+ .collaboration-section .col-6{
+    width:50%;
+    padding:0px 20px;
+ }
+  .collaboration-section img{
+    display:block;
+    width:100%;
+    border-radius:12px;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .collaboration-section .collabration-image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin:0px -15px;
+}
+.single-image-card{
+  overflow:hidden;
+  border-radius:23px;
+  position:relative;
+}
+.signle-image:hover img{
+   -ms-transform: scale(1.1, 1.1);
+     -webkit-transform: scale(1.1, 1.1);
+     -moz-transform: scale(1.1, 1.1);
+     -o-transform: scale(1.1, 1.1); 
+     transform: scale(1.1, 1.1);
+}
+.collaboration-section .collaborations-content {
+    padding-left: 24px;
+}
+  .collaboration-section .right-side-image, .collaboration-section .signle-image {
+    width: 50%;
+    padding: 0px 15px;
+}
+ .collaboration-section .main-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+  .collaboration-section .sub-title{
+      font-family: Gilroy;
+      font-weight:bold;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      margin-top:0px;
+      margin-bottom:6px;
+      color:#E72027;
+      text-transform:uppercase;
+  }
+  .collaboration-section .title{
+      font-family: Gilroy;
+      font-weight:bold;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: -0.02em;
+      margin-top:0px;
+      margin-bottom:30px;
+      color:#211E23;
+  }
+  .collaboration-section .collaborations-text p{
+      font-family:var(--font-body-family);
+      font-weight:normal;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      margin-top:0px;
+      margin-bottom:0px;
+      color:#211E23;
+  }
+   .collaboration-section .main-btn{
+      background-color:#211E23;
+      margin-top:54px;
+  }
+
+  .collaboration-section .product-card {
+    position:relative;
+    border-radius:23px;
+    overflow: hidden;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+   .collaboration-section .product-card:hover img{
+      -ms-transform: scale(1.1, 1.1);
+     -webkit-transform: scale(1.1, 1.1);
+     -moz-transform: scale(1.1, 1.1);
+     -o-transform: scale(1.1, 1.1); 
+     transform: scale(1.1, 1.1);
+   }
+  
+  .collaboration-section .product-card:first-child {
+    margin-bottom:30px;
+  }
+  .collaboration-section .product-card a, .single-image-card a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    display: block;
+    cursor:pointer;
+}
+  .collaboration-section .product-card:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(360deg, #000000 -2.49%, rgba(0, 0, 0, 0) 54.09%);
+    z-index: 0;
+    border-radius: 23px;
+ }
+  .product-description {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    margin: 30px 20px;
+}
+ .product-description .product-price {
+    font-family: Gilroy;
+    font-weight:bold;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+  .product-description .product-title {
+    font-family: Gilroy;
+    font-weight:bold;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+  
+@media screen and (max-width:1024px){
+  .collaboration-section .col-6 {
+    width:100%;
+  }
+  .collaboration-section .main-title {
+    margin-bottom: 51px;
+}
+.collaboration-section {
+   padding: 59px 0px 100px 0px;
+} 
+ .collaboration-section .row {
+    row-gap: 64px;
+} 
+.collaboration-section .collaborations-content {
+    padding-left: 0;
+    text-align: center;
+} 
+section.collaboration-section .page-width {
+    padding: 0px 76px;
+} 
+.collaboration-section .gallery-rang {
+    width: 100%;
+    max-width: 298px;
+    height: 1px;
+    background:#E2DCE5;
+    margin:0 auto;
+    margin-top:48px;
+    position: relative;
+}  
+.collaboration-section .main-btn {
+    margin-top: 48px;
+}  
+}
+@media screen and (max-width:767px){
+  section.collaboration-section .page-width {
+    padding: 0px 24px;
+  }
+  .product-description .product-title {
+    font-size: 16px;
+    line-height: 19px;
+ }
+.product-description .product-price {
+    font-size: 14px;
+    line-height: 18px;
+}
+.collaboration-section .product-card:first-child {
+    margin-bottom: 20px;
+} 
+.product-description {
+    margin: 20px 13px;
+} 
+ .collaboration-section .right-side-image, .collaboration-section .signle-image {
+    width: 50%;
+    padding: 0px 10px;
+}
+.collaboration-section .collabration-image {
+    margin: 0px -10px;
+}
+.collaboration-section {
+    padding: 38px 0px 53px 0px;
+} 
+.collaboration-section .row {
+    row-gap: 48px;
+}
+.collaboration-section .title {
+    margin-bottom: 14px;
+}  
+}
+{% endstyle %}
+  
+{% schema %}
+  {
+    "name": "Collaboration Section",
+    "settings": [
+      {
+          "type": "text",
+          "id": "heading",
+          "label": "Title"
+        },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+  "max_blocks": 2,
+  "blocks": [
+     {
+       "name": "Image",
+       "type": "image",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "feature_image1",
+           "label": "Product image1"
+         },
+         {
+           "type": "text",
+           "id": "product_title1",
+           "label": "Product Title1"
+         },
+         {
+           "type": "text",
+           "id": "product_price1",
+           "label": "Product Price1"
+         },
+         {
+           "type": "url",
+           "id": "product_btn1",
+           "label": "Product Link1"
+         },
+         {
+           "type": "image_picker",
+           "id": "feature_image2",
+           "label": "Product image2"
+         },
+         {
+           "type": "text",
+           "id": "product_title2",
+           "label": "Product Title2"
+         },
+         {
+           "type": "text",
+           "id": "product_price2",
+           "label": "Product Price2"
+         },
+         {
+           "type": "url",
+           "id": "product_btn2",
+           "label": "Product Link2"
+         },
+         {
+           "type": "image_picker",
+           "id": "feature_image3",
+           "label": "Product image3"
+         },
+         {
+           "type": "text",
+           "id": "product_title3",
+           "label": "Product Title3"
+         },
+         {
+           "type": "text",
+           "id": "product_price3",
+           "label": "Product Price3"
+         },
+         {
+           "type": "url",
+           "id": "product_btn3",
+           "label": "Product Link3"
+         },
+       ],
+     },
+    {
+       "name": "Text",
+       "type": "text",
+       "settings": [
+         {
+           "type": "text",
+           "id": "sub_title",
+           "label": "Sub Title"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+         },
+         {
+           "type": "richtext",
+           "id": "description",
+           "label": "Description"
+         },
+         {
+           "type": "url",
+           "id": "button_link",
+           "label": "Button Link"
+         },
+         {
+           "type": "text",
+           "id": "button_text",
+           "label": "Button Text"
+         }
+       ],
+     }
+  ],
+    "presets": [
+      {
+        "name": "Collaboration Section",
+      }
+  ]
+  }
+{% endschema %}

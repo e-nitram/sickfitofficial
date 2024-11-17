@@ -1,0 +1,174 @@
+<!-------------- gallery slider ----------------------->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="gallery-slider-section section-{{ section.id }}-padding">
+   <div class="page-width">
+     <div class=" swiper mySwiper gallery-slider">
+      <div class="swiper-wrapper">
+         {% for block in section.blocks %}
+         <div class="swiper-slide image-slide">
+          
+              {%- if block.settings.image  != blank -%}
+                 <img src="{{ block.settings.image | img_url: '' }}" alt="gallery-image">
+              {% endif %}
+           
+         </div>
+        {% endfor %}
+      </div>
+     <div class="swiper-scrollbar"></div>
+    </div>
+     </div>
+</section>
+
+{% style %}
+.gallery-slider-section{
+  position:relative;
+}
+.gallery-slider-section:after{
+  content:'';
+} 
+ .gallery-slider > .swiper-scrollbar {
+  border-radius: 2px;
+  height: 5px;
+  width: 200px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gallery-slider-section .gallery-slider{
+  width:100%;
+  max-width:1140px;
+  margin:0 auto;
+  overflow:hidden;
+} 
+.gallery-slider-section .gallery-slider img {
+    width: 100%;
+    display: block;
+    border-radius:24px;
+    height: 750px;
+    object-fit: cover;
+}
+ .gallery-slider-section .gallery-slider .image-slide{
+    border-radius:24px;
+   overflow:hidden;
+ }
+  .gallery-slider-section .swiper-scrollbar-drag {
+    background: #E72027;
+    display:block;
+    height:5px;
+    width:54px !important;
+}
+.gallery-slider > .swiper-scrollbar {
+  border-radius: 2px;
+  width: 300px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background:transparent;
+  position:relative;
+  margin-top:78px;
+}
+.gallery-slider > .swiper-scrollbar:before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    background:#434343;
+    top: 50%;
+}
+.gallery-slider-section:after {
+    content: '';
+    background-color:#111112;
+    width: 100%;
+    position: absolute;
+    height:60%;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+}
+
+
+  /**********************/
+
+
+/**********************/  
+@media screen and (max-width:1024px){
+.gallery-slider-section .gallery-slide img {
+    height: 550px;
+}
+.gallery-slider-section{
+  padding-bottom:80px;
+}  
+  }
+
+@media screen and (max-width:767px){
+.gallery-slider-section .gallery-slider img {
+    height: 350px;
+}
+.gallery-slider-section {
+    padding-bottom: 54px;
+} 
+.gallery-slider > .swiper-scrollbar {
+  margin-top:54px;
+}
+}
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Gallery Slider",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+   "blocks": [
+     {
+       "name": "Image",
+       "type": "image",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         }
+       ],
+     }
+  ],
+    "presets": [
+      {
+        "name": "Gallery Slider",
+      }
+  ]
+  }
+{% endschema %}

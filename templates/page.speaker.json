@@ -1,0 +1,402 @@
+{
+  "sections": {
+    "main": {
+      "type": "speaker-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "speaker_image_banner_taateW": {
+      "type": "speaker-image-banner",
+      "blocks": {
+        "heading_LPdGze": {
+          "type": "heading",
+          "settings": {
+            "heading": "Great Men Move Slowly:",
+            "heading_size": "h1"
+          }
+        },
+        "text_beAwNn": {
+          "type": "text",
+          "settings": {
+            "text": "Through Patience, Perseverance, Persistence, and Resilience, Anything Is Achievable",
+            "text_style": "body"
+          }
+        },
+        "buttons_YFRMk7": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "See Paden in Action",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_LPdGze",
+        "text_beAwNn",
+        "buttons_YFRMk7"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/VideoFrame_2.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_Pjwgkz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xCA3eB": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Paden Brings to Your Organization",
+            "heading_size": "h1"
+          }
+        },
+        "text_U7CRHG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Paden Sickles delivers more than just words—she brings an infectious energy and a contagious smile that lights up every room. With a wealth of knowledge gained from her experiences as a veteran, entrepreneur, and visionary leader, Paden shares actionable insights that inspire and empower. Her dynamic approach, paired with her deep understanding of resilience, innovation, and leadership, will leave your audience motivated and ready to take on new challenges.<br\/><br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xCA3eB",
+        "text_U7CRHG"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_BdftkW": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_fHtH87": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1:1 Business Consulting",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_XE68gK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pitch Coaching with Paden Sickles",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_BFe7BF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Connect with Paden",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_XpMxg3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Event Hosting with Paden Sickles",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_rrYYNY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Workshops with Paden Sickles",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_fHtH87",
+        "collapsible_row_XE68gK",
+        "collapsible_row_BFe7BF",
+        "collapsible_row_XpMxg3",
+        "collapsible_row_rrYYNY"
+      ],
+      "settings": {
+        "heading": "",
+        "description": "",
+        "button_text": "",
+        "button_link": "",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "contact_form_jbhQLU": {
+      "type": "contact-form",
+      "disabled": true,
+      "custom_css": [
+        "h1 {color: white;}",
+        "p {color: white;}",
+        "label {color: white;}"
+      ],
+      "settings": {
+        "heading": "Elevate Your Event with Paden’s Energy",
+        "description": "<p>Her dynamic approach, paired with her deep understanding of resilience, innovation, and leadership, will leave your audience motivated and ready to take on new challenges.<\/p>",
+        "image1": "shopify:\/\/shop_images\/Contact_Image.png",
+        "color_scheme": "scheme-3",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "speaker_contact_form_jiV7Da": {
+      "type": "speaker-contact-form",
+      "settings": {
+        "heading": "Elevate Your Event with Paden’s Energy",
+        "description": "<p>Her dynamic approach, paired with her deep understanding of resilience, innovation, and leadership, will leave your audience motivated and ready to take on new challenges.<\/p>",
+        "image1": "shopify:\/\/shop_images\/Contact_Image.png",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "logo_section_Wa7U96": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_Fhm7Q9": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Frame_450.png"
+          }
+        },
+        "logo_nBbTKU": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Vector_1.png"
+          }
+        },
+        "logo_CtBBFR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Vector_ce142141-e724-4ab7-b394-16dc6c5ed3bb.png"
+          }
+        },
+        "logo_dzqi43": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/yahoo-news-logo-1024x375.png"
+          }
+        },
+        "logo_EGrKHx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/02_21583324-1d52-4522-bf74-cf73ad8a72ba.png"
+          }
+        },
+        "logo_w6TTKH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/03_3fc28c9e-6c7f-4c7b-b3e0-c55eff465f03.png"
+          }
+        },
+        "logo_jhnEPp": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/04_016e23cb-d15e-4211-9808-59301378f570.png"
+          }
+        },
+        "logo_7EE37d": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/05.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_Fhm7Q9",
+        "logo_nBbTKU",
+        "logo_CtBBFR",
+        "logo_dzqi43",
+        "logo_EGrKHx",
+        "logo_w6TTKH",
+        "logo_jhnEPp",
+        "logo_7EE37d"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_VminVt": {
+      "type": "speaker-image-with-text",
+      "blocks": {
+        "heading_LB8jU6": {
+          "type": "heading",
+          "settings": {
+            "heading": "In the press",
+            "heading_size": "h2"
+          }
+        },
+        "text_q9yHiH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“This soldier created SickFit apparel and socks to outlast the toughest rucks!”<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LB8jU6",
+        "text_q9yHiH"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mask_group_feeebfad-6534-4464-a4ef-d05d42f9065d.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "speaker_image_with_text_9cCPcK": {
+      "type": "speaker-image-with-text",
+      "blocks": {
+        "heading_qQnBqq": {
+          "type": "heading",
+          "settings": {
+            "heading": "In the press",
+            "heading_size": "h1"
+          }
+        },
+        "text_KkM4Nj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“This soldier created SickFit apparel and socks to outlast the toughest rucks!”<\/p>",
+            "text_style": "body"
+          }
+        },
+        "image_AfTKRk": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_qQnBqq",
+        "text_KkM4Nj",
+        "image_AfTKRk"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mask_group_feeebfad-6534-4464-a4ef-d05d42f9065d.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "logo_section_NQJemU": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_LLqgct": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_q7RdpM": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_Y9qEKt": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_LHajWy": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_fmUzgH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_q84QFf": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_LLqgct",
+        "logo_q7RdpM",
+        "logo_Y9qEKt",
+        "logo_LHajWy",
+        "logo_fmUzgH",
+        "logo_q84QFf"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "speaker_image_banner_taateW",
+    "rich_text_Pjwgkz",
+    "collapsible_content_BdftkW",
+    "contact_form_jbhQLU",
+    "speaker_contact_form_jiV7Da",
+    "logo_section_Wa7U96",
+    "image_with_text_VminVt",
+    "speaker_image_with_text_9cCPcK",
+    "logo_section_NQJemU"
+  ]
+}

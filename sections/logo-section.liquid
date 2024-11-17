@@ -1,0 +1,127 @@
+<!----------- logo section ---------------->
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="logo-section section-{{ section.id }}-padding">
+  <div class="page-width">
+     <ul class="brand-list">
+        {% for block in section.blocks %}
+          <li class="logo-img">
+             {%- if block.settings.logo != blank -%}
+                <img src="{{ block.settings.logo | img_url: '' }}" alt="logo-list" >
+             {% endif %}
+          </li>
+      {% endfor %}
+     </ul>
+  </div>
+</section>
+
+{% style %}
+.logo-section .brand-list li{
+   list-style:none;
+   max-width: calc(16.6666667% - 30px);
+   margin: 10px;
+   flex: auto;
+   height: auto;
+}
+.logo-section .brand-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width:1038px;
+    padding:0;          
+    margin:0 auto;
+}
+.logo-section .brand-list img{
+  display:block;
+  width:100%;
+  aspect-ratio: 3 / 2;
+  object-fit:contain;
+}
+ @media screen and (max-width:1024px){
+   .logo-section .brand-list li {
+    list-style: none;
+    max-width:33.33%;
+    width:33.33%;
+    padding:0 10px;
+    flex: auto;
+    height: auto;
+    margin:0px;
+  }
+   .logo-section .brand-list {
+     row-gap:24px;
+}
+.logo-section {
+  padding-top:100px;
+  padding-bottom:0px;
+}   
+ }
+@media screen and (max-width:767px){
+ .logo-section {
+   padding-top:66px;
+   padding-bottom:0px;
+}  
+}
+  
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "Logo Section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Section",
+    }
+  ]
+  }
+{% endschema %}

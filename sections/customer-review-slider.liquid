@@ -1,0 +1,311 @@
+<!------------ Customer review slider ---------------->
+<!---------------customer slider------------------>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+
+<section class="customer-review-slider section-{{ section.id }}-padding" style="background-image:url('{{ section.settings.bg_image | img_url: '' }}');">
+   <div class="page-width">
+     {%- if section.settings.heading  != blank -%}
+			<h2 class="main-title">{{ section.settings.heading }}</h2>
+      {% endif %}
+       <div class="review-slider">
+          <div thumbsSlider="" class="swiper mySwiper customer-profile">
+            <div class="swiper-wrapper">
+             {% for block in section.blocks %}
+                  <div class="swiper-slide">
+                    <div class="client-detalis">
+                      <div class="customer-img">
+                         {%- if block.settings.customer != blank -%}
+                            <img src="{{ block.settings.customer | img_url: '' }}" alt="customer" >
+                         {% endif %}
+                         </div>
+                         {%- if block.settings.name != blank -%}
+                           <h4 class="customer-name">{{ block.settings.name }}</h4>
+                         {% endif %}
+                         <div class="customer-rating">
+                          {%- if block.settings.rating != blank -%}
+                              <img src="{{ block.settings.rating | img_url: '' }}" alt="rating" >
+                           {% endif %}
+                         </div>
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
+            
+          </div>
+          <div class="swiper mySwiper2 customer-saying">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+              <div class="swiper-slide">
+                 
+                    <div class="client-say">
+        				 <div class="customer-review">
+                           {{ block.settings.customer_say }}
+                         </div>
+                    </div>
+                   
+              </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+
+  </div>
+   </div>
+</section>
+
+{% style %}
+.customer-review-slider {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.customer-review-slider .customer-profile{
+  padding-bottom:48px;
+  width:100%;
+  max-width:798px;
+  margin:0 auto;
+}
+.customer-review-slider .review-slider .swiper-slide {
+    padding-bottom: 12px;
+}
+.customer-review-slider  .swiper-scrollbar-drag {
+    background: #fff;
+    display:block;
+    height:5px;
+    width:54px !important;
+}
+.customer-review-slider .swiper-scrollbar.swiper-scrollbar-horizontal {
+  border-radius: 2px;
+  width: 300px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background:transparent;
+  position:relative;
+  margin-top:78px;
+}
+.customer-review-slider  .swiper-scrollbar.swiper-scrollbar-horizontal:before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    background:#434343;
+    top: 50%;
+}
+
+  .customer-review-slider .review-slider .client-detalis img{
+     width:100%;
+     max-width:64px;
+     margin:0 auto;
+     border-radius: 100px;
+  }
+  .customer-review-slider .review-slider .client-detalis{
+    background-color:#0F0F0F57;
+    text-align: center;
+    padding: 50px 30px;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid #141414;
+    cursor: pointer;
+  }
+
+  .customer-review-slider .review-slider .client-detalis:after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color:#0c0c0c;
+    border: 1px solid #fff;
+    display: block;
+    bottom: -7%;
+    position: absolute;
+    right: 45%;
+    transform: translateX(-45%);
+    rotate: 135deg;
+    border-bottom: 0;
+    border-left: 0;
+    opacity:0;
+}
+  .customer-review-slider .review-slider .client-detalis:hover:after {
+    opacity:1;
+  }
+ .customer-review-slider .review-slider .client-detalis:hover {
+    background: linear-gradient(180deg, #141414 0%, #0A0A0A 100%);
+    border: 1px solid #fff;
+  }
+  .customer-review-slider .customer-profile .swiper-slide-thumb-active .client-detalis:after{
+    opacity:1 !important;
+  }
+  .customer-review-slider .customer-profile .swiper-slide-thumb-active .client-detalis{
+    background: linear-gradient(180deg, #141414 0%, #0A0A0A 100%);
+    border: 1px solid #fff;
+  }
+  .customer-review-slider .review-slider{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .customer-review-slider  .customer-name{
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    color:#fff;
+    margin:8px 0;
+  }
+.customer-review-slider .main-title{
+    color:#fff;
+    margin-bottom:70px;
+    text-align:center;
+  }
+  .customer-review-slider .customer-review p{
+      font-family:var(--font-body-family);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin:0;
+      color:#fff;
+      position:relative;
+  }
+ 
+@media screen and (max-width:1024px){
+.customer-review-slider{
+  padding:76px 0;
+}
+.customer-review-slider .page-width{
+  padding:0;
+}
+.customer-review-slider .customer-profile {
+    max-width:100%;
+    padding-left: 40px;
+}
+.customer-review-slider .client-say {
+    padding: 0px 40px;
+} 
+.customer-review-slider .swiper-scrollbar.swiper-scrollbar-horizontal {
+    margin-top: 55px;
+}   
+}
+  
+@media screen and (max-width:767px){
+.customer-review-slider{
+  padding:40px 0;
+}
+.customer-review-slider .page-width{
+  padding:0;
+}
+.customer-review-slider .customer-profile {
+    max-width:100%;
+    padding-left:24px;
+    padding-right:24px;
+    padding-bottom:35px;
+}
+.customer-review-slider .swiper-scrollbar.swiper-scrollbar-horizontal {
+    margin-top: 40px;
+}  
+.customer-review-slider .main-title {
+    padding:0px 24px;
+    margin-bottom:38px;
+} 
+.customer-review-slider .client-say {
+    padding: 0px 24px;
+}
+.customer-review-slider .review-slider .client-detalis:after {
+    right: 50%;
+    transform: translateX(-50%);
+}
+}
+  
+{% endstyle %}
+
+
+
+{% schema %}
+  {
+    "name": "Testimonial Slider",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+        },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Title"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+    "blocks": [
+      {
+        "type": "customer",
+        "name": "customer",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "customer",
+            "label": "Customer Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "image_picker",
+            "id": "rating",
+            "label": "Rating Image"
+          },
+          {
+            "type": "richtext",
+            "id": "customer_say",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonial Slider",
+      }
+    ]
+    }
+{% endschema %}

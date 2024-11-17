@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": true
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "newsletter_rGVga3": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Stay updated!",
+            "description": "<p>Want to receive style insights right on your inbox? Subscribe to our newsletter for the latest news and <strong>save on your next purchase!<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "featured_image",
+        "share",
+        "content",
+        "newsletter_rGVga3"
+      ],
+      "settings": {}
+    },
+    "logo_section_tYBryX": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_VjW8XW": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_URqqNQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_G7frqt": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_BqhrUz": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_9MaLiH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_y9i3pn": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_VjW8XW",
+        "logo_URqqNQ",
+        "logo_G7frqt",
+        "logo_BqhrUz",
+        "logo_9MaLiH",
+        "logo_y9i3pn"
+      ],
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "logo_section_tYBryX"
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "sections": {
+    "breadcrumb_navigation_wwzfaQ": {
+      "type": "breadcrumb-navigation",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "shop_shop_login_button_app_block_Bh4nXr": {
+          "type": "shopify:\/\/apps\/shop\/blocks\/shop-login-button-app-block\/7cab7c4a-1dfc-4b7e-8e53-31f104f2fa4e",
+          "settings": {}
+        },
+        "collapsible_tab_rfwr9E": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Orders & Shipping",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_9iVY9a": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Returns",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share",
+        "shop_shop_login_button_app_block_Bh4nXr",
+        "collapsible_tab_rfwr9E",
+        "collapsible_tab_9iVY9a"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_AX6EYh": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Outfit Inspiration",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "socks",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "main_product_tab_eftQ3R": {
+      "type": "main-product-tab",
+      "blocks": {
+        "feature_block_QVV39a": {
+          "type": "feature_block",
+          "settings": {
+            "feature_title": "Reinforced Heel & Toe",
+            "feature_description": "<p><strong>A reinforced heel and toe<\/strong> in a sock refer to areas of the sock that have been strengthened with additional layers or materials to enhance durability and longevity. These areas are prone to wear and tear due to friction and pressure from the shoe, so reinforcing them helps prevent holes and prolongs the sock's lifespan. In a reinforced heel, extra padding or thicker yarns are often added to protect the heel from abrasion and friction, which can occur during walking or running. This reinforcement helps to maintain the structural integrity of the sock and provides cushioning to reduce discomfort and prevent blisters. Similarly, the toe area of the sock is reinforced to withstand the repeated pressure and friction that occurs during toe-off when walking or running. Reinforcing the toe helps prevent premature wear and tear, extending the life of the sock and improving overall comfort for the wearer. Overall, socks with reinforced heel and toe areas are more durable and resilient, making them ideal for everyday wear and high-impact activities.<br\/><br\/><\/p>",
+            "icon_image": "shopify:\/\/shop_images\/benefits.svg"
+          }
+        },
+        "feature_block_6RXW3r": {
+          "type": "feature_block",
+          "settings": {
+            "feature_title": "Energy Return",
+            "feature_description": "<p><strong>\"Energy return<\/strong>\" in a sock refers to the sock's ability to absorb and then release energy as pressure is applied and released during activities like walking, running, or jumping. This feature is often achieved through the use of specialized materials or technologies, such as cushioning foams or spring-like fibers, that compress when pressure is applied and then rebound to their original shape when the pressure is removed. Socks with enhanced energy return can help to reduce fatigue, provide additional comfort, and potentially improve performance by returning some of the energy expended during movement back to the wearer. This can result in a more efficient and comfortable experience, especially during high-impact activities.<\/p>",
+            "icon_image": "shopify:\/\/shop_images\/benefits_1.svg"
+          }
+        },
+        "feature_block_wCbR6A": {
+          "type": "feature_block",
+          "settings": {
+            "feature_title": "Moisture Wicking",
+            "feature_description": "<p><strong>Moisture wicking<\/strong> in a sock refers to its ability to draw moisture (such as sweat) away from the skin and to the outer surface of the fabric, where it can evaporate more easily. This feature is commonly achieved through the use of special synthetic materials or blends that have hydrophobic (water-repelling) properties. By wicking moisture away from the skin, moisture-wicking socks help to keep the feet dry and comfortable, reducing the risk of blisters, chafing, and fungal infections. This feature is particularly beneficial during physical activities or in warm weather when sweating is more likely to occur.<\/p>",
+            "icon_image": "shopify:\/\/shop_images\/benefits_2.svg"
+          }
+        },
+        "feature_block_QNGBHX": {
+          "type": "feature_block",
+          "settings": {
+            "feature_title": "No Slip Rib",
+            "feature_description": "<p><strong>A \"no-slip rib<\/strong>\" in a sock refers to a specific design element where ribbing is incorporated into the sock's construction to prevent it from slipping down the leg or bunching up during wear. This ribbing typically consists of elastic material that creates a tighter grip around the calf or ankle, ensuring that the sock stays in place and maintains its position throughout the day. The no-slip rib helps to enhance the overall comfort and functionality of the sock by preventing the annoyance and inconvenience of constantly readjusting or pulling up sagging socks.<\/p><p><br\/><br\/><\/p>",
+            "icon_image": "shopify:\/\/shop_images\/benefits_3.svg"
+          }
+        },
+        "feature_block_HUFaNw": {
+          "type": "feature_block",
+          "settings": {
+            "feature_title": "Arch Compression",
+            "feature_description": "<p><strong>Arch compression<\/strong> in socks refers to the design feature where the fabric around the arch of the foot is snugly compressed. This compression provides support and stability to the arch, which can help reduce fatigue, enhance blood circulation, and minimize the risk of injuries such as plantar fasciitis. The compression helps to keep the sock in place and provides a comfortable, secure fit for the wearer during various activities like running, hiking, or standing for long periods.<\/p>",
+            "icon_image": "shopify:\/\/shop_images\/benefits_4.svg"
+          }
+        }
+      },
+      "block_order": [
+        "feature_block_QVV39a",
+        "feature_block_6RXW3r",
+        "feature_block_wCbR6A",
+        "feature_block_QNGBHX",
+        "feature_block_HUFaNw"
+      ],
+      "settings": {
+        "title": "Socks Features",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Outfit Inspiration",
+        "heading_size": "h2",
+        "products_to_show": 5,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 28
+      }
+    },
+    "review_card_section_xVbAwh": {
+      "type": "review-card-section",
+      "blocks": {
+        "card_y3izXE": {
+          "type": "card",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/socks",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "4 months ago",
+            "card_title": "I came SickFit (Paden) at a networking event and was instantly sold on the quality of the socks.",
+            "description": "<p>I placed an order within minutes of seeing the samples and was super excited...<\/p>",
+            "name": "- Lereco Edwards"
+          }
+        },
+        "card_tx6ENt": {
+          "type": "card",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/socks",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "3 months ago",
+            "card_title": "This is a great company with amazing products!",
+            "description": "<p>I started by buying two pair of shorts and later had to go back to purchase them all! I love the feel, breathability, and style of their products.<\/p>",
+            "name": "- Marquis Pitts"
+          }
+        },
+        "card_NrrdUd": {
+          "type": "card",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/socks",
+            "button_text": "<p>Reviewed on: <strong>Socks<\/strong><\/p>",
+            "rating_img": "shopify:\/\/shop_images\/Vector_2.png",
+            "rating_text": "A year ago",
+            "card_title": "The comfiest socks I’ve owned!",
+            "description": "<p>Hold there shape throughout the whole day. My fav collection is the Juneteenth!<\/p>",
+            "name": "- Trey Mckinney"
+          }
+        }
+      },
+      "block_order": [
+        "card_y3izXE",
+        "card_tx6ENt",
+        "card_NrrdUd"
+      ],
+      "settings": {
+        "title": "What SickFit Customers Say",
+        "padding_top": 100,
+        "padding_bottom": 60
+      }
+    },
+    "logo_section_6pHWei": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_DyMxVE": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_tG768U": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_NGLnbT": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_XFgrG7": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_9CybPw": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_aWmaiC": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_DyMxVE",
+        "logo_tG768U",
+        "logo_NGLnbT",
+        "logo_XFgrG7",
+        "logo_9CybPw",
+        "logo_aWmaiC"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "breadcrumb_navigation_wwzfaQ",
+    "main",
+    "featured_collection_AX6EYh",
+    "main_product_tab_eftQ3R",
+    "related-products",
+    "review_card_section_xVbAwh",
+    "logo_section_6pHWei"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "sections": {
+    "banner_section_RkQPb6": {
+      "type": "banner-section",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/f54902db05df78964b6e6b135bc4bbc7_enhanced.png",
+        "bg_image_mobile": "shopify:\/\/shop_images\/f54902db05df78964b6e6b135bc4bbc7_enhanced.png",
+        "heading": "SickFit Insights",
+        "description": "<p>Explore the latest trends and insights in style through expert blogs.<\/p>",
+        "text_color": "#ffffff",
+        "button_link": "",
+        "button_text": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "large",
+        "show_date": true,
+        "show_author": true,
+        "heading": "Stay updated!",
+        "description": "<p>Want to receive style insights right on your inbox? Subscribe to our newsletter for the latest news and <strong>save on your next purchase!<\/strong><\/p>",
+        "padding_top": 64,
+        "padding_bottom": 36
+      }
+    },
+    "logo_section_PReKy8": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_HgbUGm": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_E4CXfM": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_7Abfx6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_4TEcwm": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_yJMKrQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_4PMhWJ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_HgbUGm",
+        "logo_E4CXfM",
+        "logo_7Abfx6",
+        "logo_4TEcwm",
+        "logo_yJMKrQ",
+        "logo_4PMhWJ"
+      ],
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "banner_section_RkQPb6",
+    "main",
+    "logo_section_PReKy8"
+  ]
+}

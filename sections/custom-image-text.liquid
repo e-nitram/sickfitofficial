@@ -1,0 +1,241 @@
+<!----------------custom image text---------------------->
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="custom-image-text section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class="custom-text-items">
+            <div class="founder-content">
+                {%- if section.settings.heading  != blank -%}
+                   <h2 class="founder-title">{{ section.settings.heading }}</h2>
+                {% endif %}
+                {%- if section.settings.description  != blank -%}
+                   <div class="description">
+                      {{ section.settings.description }}
+                   </div>
+                {% endif %}
+                {%- if section.settings.button_link  != blank -%}
+                   <a href="{{ section.settings.button_link }}" class="main-btn"><span>{{ section.settings.button_text}}</span></a>
+                {% endif %}
+             </div>
+        </div>
+    </div>
+</section>
+
+{% style %}
+.custom-image-text.section-{{ section.id }}-padding{
+  background-image:url('{{ section.settings.bg_image | img_url: '' }}');
+  margin-top:{{ section.settings.margin_top}}px;
+  margin-bottom:{{ section.settings.margin_bottom }}px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+.custom-image-text.section-{{ section.id }}-padding .custom-text-items .founder-content, .founder-title{
+  color:{{ section.settings.text_color}};
+}
+.custom-image-text .founder-content {
+    width: 100%;
+    max-width:760px;
+    margin-left: auto;
+    padding-right:150px;
+}
+
+.custom-image-text .founder-content .founder-title {
+  font-family: "Gilroy";
+  font-weight:bold;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  margin:0;
+}
+.custom-image-text .founder-content .description p {
+  font-family:var(--font-body-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  margin-top:18px;
+  margin-bottom:0;
+}
+
+.custom-image-text .founder-content .main-btn {
+  margin-top:48px;
+} 
+
+/***************responsive******************/  
+@media screen and (max-width:1024px){
+ .custom-image-text.section-{{ section.id }}-padding{
+  background-image:url('{{ section.settings.tablate_bg_image | img_url: '' }}');
+}
+.custom-image-text .founder-content {
+    max-width: 446px;
+    padding-right: 0;
+}
+.custom-image-text.section-{{ section.id }}-padding{
+  margin-top:30px;
+  margin-bottom:61px;
+  padding:67px 0;
+  height:600px;
+}
+.custom-image-text .founder-content {
+    max-width:466px;
+    padding-right: 0;
+    text-align:left;
+}  
+.custom-image-text .founder-content .main-btn {
+  margin-top:40px;
+}   
+}
+
+
+
+  
+@media screen and (max-width:767px){
+.custom-image-text .founder-content .description p {
+    font-size: 16px;
+    line-height: 24px;
+}
+.custom-image-text.section-{{ section.id }}-padding {
+    background-image:url('{{ section.settings.bg_image_mobile | img_url: '' }}');
+    min-height:879px;
+}
+.custom-image-text .custom-text-items {
+    position: relative;
+    height: 100%;
+}
+.custom-image-text .page-width{
+  height:100%;
+} 
+ .custom-image-text .founder-content {
+    position:absolute;
+   bottom:0;
+} 
+.custom-image-text.section-{{ section.id }}-padding{
+  margin-top:0;
+  margin-bottom:40px;
+  padding:54px 0;
+}  
+ .custom-image-text .founder-content {
+    max-width:100%;
+    padding-right: 0;
+    text-align:center;
+}  
+ }
+
+@media screen and (max-width:420px){
+  .custom-image-text.section-{{ section.id }}-padding {
+    background-image:url('{{ section.settings.bg_image_mobile | img_url: '' }}');
+    min-height:950px;
+    background-position:center;
+  }  
+}
+
+  
+  
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Custom Image Text",
+    "settings": [
+      {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+      {
+          "type": "image_picker",
+          "id": "tablate_bg_image",
+          "label": "Tablate Background Image"
+        },
+      {
+          "type": "image_picker",
+          "id": "bg_image_mobile",
+          "label": "Mobile Background Image"
+        },
+       {
+          "type": "text",
+          "id": "heading",
+          "label": "Title"
+        },
+       {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+      {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color"
+        },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 12,
+      "max":100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 16
+   },
+      {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 12,
+      "max":100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 16
+   }
+    ],
+    "presets": [
+      {
+        "name": "Custom Image Text",
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,265 @@
+<!----------collaborations page section------------------->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="collaborations-card-section section-{{ section.id }}-padding">
+   <div class="page-width">
+     <div class="collaboration-card-section">
+       {% for block in section.blocks %}
+         <div class="collaboration-card">
+            <div class="row">
+                <div class="col-6">
+                  {%- if block.settings.card_image != blank -%}
+                    <div class="collaboration-image">
+                       <img src="{{ block.settings.card_image | img_url: '' }}" alt="product-image">
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="col-6">
+                    <div class="collaboration-card-items">
+                      {%- if block.settings.collaboration_tag != blank -%}
+                        <span class="collaboration-tag">{{ block.settings.collaboration_tag }}</span>
+                      {% endif %}
+                      {%- if block.settings.logo_icon != blank -%}
+                      <div class="product-icons">
+                          {{ block.settings.logo_icon }}
+                      </div>
+                      {% endif %}
+                      {%- if block.settings.card_title != blank -%}
+                      <h2 class="collaboration-card-title">{{ block.settings.card_title }}</h2>
+                      {% endif %}
+                      {%- if block.settings.release_date != blank -%}
+                       <h6 class="released-date">{{ block.settings.release_date }}</h6>
+                      {% endif %}
+                      {%- if block.settings.description != blank -%}
+                      <div class="description">
+                        {{ block.settings.description }}
+                      </div>
+                      {% endif %}
+                      {%- if block.settings.btn_link != blank -%}
+                       <a href="{{ block.settings.btn_link }}" class="main-btn"><span>{{ block.settings.btn_text }}</span></a>
+                      {% endif %}
+                    </div>
+                </div>
+            </div>
+         </div>
+        {% endfor %}
+     </div>
+   </div>
+</section>
+
+{% style %}
+  .collaborations-card-section .collaboration-card .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin:0px -20px;
+  }
+ .collaborations-card-section .page-width{
+      max-width:1180px;
+}
+.collaborations-card-section .collaboration-card .col-6{
+    width:50%;
+    padding:0px 20px;
+}
+.collaborations-card-section .collaboration-card .collaboration-image img{
+    width:100%;
+    display:block;
+}
+.collaborations-card-section .collaboration-card{
+    margin-bottom:78px;
+}
+.collaborations-card-section .collaboration-card-title{
+    font-family: Gilroy;
+    font-weight:700;
+    font-size:40px;
+    line-height:48px;
+    letter-spacing: -0.02em;
+    margin-top:0px;
+    margin-bottom: 0px;
+    color: #211E23;
+}
+.collaborations-card-section .released-date{
+    font-family: var(--font-body-family);
+    font-weight:600;
+    font-size:20px;
+    line-height:26px;
+    letter-spacing: -0.02em;
+    margin-top:8px;
+    margin-bottom:24px;
+    color: #211E23;
+} 
+.collaborations-card-section .description p {
+    font-family: var(--font-body-family);
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin:0;
+    color: #211E23;
+}
+.collaborations-card-section .main-btn {
+    margin-top: 34px;
+    background-color: transparent;
+    border: 1px solid #211E23;
+}
+.collaborations-card-section .main-btn span{
+    color:#211E23;
+    transition: .5s ease;
+}
+.collaborations-card-section .main-btn:hover span{
+    color:#fff;
+}
+.collaborations-card-section .product-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom:8px;
+    margin-top:30px;
+}
+.collaborations-card-section .product-icons svg {
+    width: 75px;
+    height: 38px;
+    padding: 5px;
+    border: 1px solid #E2DCE5;
+    box-shadow: 8px 8px 48px 0px #211E230A;
+    border-radius: 4px;
+}
+.collaborations-card-section .collaboration-tag {
+    font-family: var(--font-body-family);
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin:0;
+    color: #fff;
+    background-color:#E72027;
+    padding:6px 10px;
+}
+
+/************ responsive *******************/
+@media screen and (max-width:1024px){
+.collaborations-card-section .collaboration-card .col-6 {
+    width: 100%;
+}  
+.collaborations-card-section .collaboration-card .row {
+    row-gap: 34px;
+}
+.collaborations-card-section .collaboration-card {
+    margin-bottom: 48px;
+}
+.collaboration-card-section .collaboration-card:last-child{
+  margin-bottom:0;
+}
+}
+
+@media screen and (max-width:420px) {
+  .collaborations-card-section .collaboration-card-title {
+    font-size: 28px;
+    line-height: 35px;
+}
+.collaborations-card-section .collaboration-card {
+    margin-bottom: 30px;
+}
+}
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Collaboration Card ",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+      
+    ],
+  "blocks": [
+    {
+      "type": "collaboration-card",
+      "name": "Collaboration Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "collaboration_tag",
+          "label": "Tag"
+        },
+        {
+          "type": "html",
+          "id": "logo_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title"
+        },
+        {
+          "type": "text",
+          "id": "release_date",
+          "label": "Release Date"
+        } ,
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Collaboration Card ",
+      }
+  ]
+  }
+{% endschema %}

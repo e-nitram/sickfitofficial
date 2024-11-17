@@ -1,0 +1,231 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "about_banner_YQFn7h": {
+      "type": "about-banner",
+      "settings": {
+        "sub_title": "About",
+        "title": "SickFit Mission",
+        "description": "<p>Our mission is to engineer fashion pieces with innovative, high-quality designs that inspire meaningful conversations. We are committed to social and environmental responsibility, ensuring that our business is  friendly to both people and the planet.<\/p>",
+        "about_image": "shopify:\/\/shop_images\/about-banner_1.png",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "custom_image_text_DxBbnY": {
+      "type": "custom-image-text",
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/about_img-lrg.jpg",
+        "tablate_bg_image": "shopify:\/\/shop_images\/Group_25.png",
+        "bg_image_mobile": "shopify:\/\/shop_images\/Section_02.png",
+        "heading": "Meet Our Founder",
+        "description": "<p>Amidst the scorching Texas heat, our CEO, Paden, con­quered the grueling 12-mile ruck march for the Army's pres­tigious Air Assault School, only to find her feet in sham­bles-plagued by blisters and pain. In that pivotal moment, she recognized the pressing need to provide superior quali­ty and support for our service members, athletes, and indi­viduals enduring constant strain on their feet. <\/p><p>Thus, on <strong>July 27, 2021, SickFit was born.<\/strong><\/p>",
+        "text_color": "#ffffff",
+        "button_link": "#",
+        "button_text": "Shop Now",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "margin_top": 100,
+        "margin_bottom": 100
+      }
+    },
+    "image_with_text_VAbbAF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Xwjxmx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet Our Founder",
+            "heading_size": "h0"
+          }
+        },
+        "text_GTAhCM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Amidst the scorching Texas heat, our CEO, Paden, con­quered the grueling 12-mile ruck march for the Army's pres­tigious Air Assault School, only to find her feet in sham­bles-plagued by blisters and pain. In that pivotal moment, she recognized the pressing need to provide superior quali­ty and support for our service members, athletes, and indi­viduals enduring constant strain on their feet. <\/p><p>Thus, on <strong>July 27, 2021, SickFit was born.<\/strong><\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_LjaYib": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Xwjxmx",
+        "text_GTAhCM",
+        "button_LjaYib"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_7952_1080x_7289dd05-b64f-4378-9966-53e257396ee0.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-3",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "value_section_XmDPTt": {
+      "type": "value-section",
+      "blocks": {
+        "image_Hm9W4P": {
+          "type": "image",
+          "settings": {
+            "value_image1": "shopify:\/\/shop_images\/Screenshot_2024-02-07_094326_640x_ad13fdda-56ce-40ce-954d-1cad1c4e73df.png",
+            "value_image2": "shopify:\/\/shop_images\/Mask_group_e78a5432-20b7-42db-a376-d058d132f7c2.png",
+            "value_image3": "shopify:\/\/shop_images\/DSC00211_640x_a360e89a-1266-4fc4-82aa-736ad7376759.jpg"
+          }
+        },
+        "text_DkRedD": {
+          "type": "text",
+          "settings": {
+            "description": "<ul><li>Honor and Integrity<\/li><li>We prioritize doing the right thing in every situation, maintaining the highest standards of honesty and integrity.<\/li><li>Diversity, Innovation, and Creativity<\/li><li>We embrace diversity in all aspects, understanding that diverse perspectives lead to out-of-the-box thinking and innovative solutions. We en­courage creative thinking and critical problem-solving, be­lieving that diverse teams make better decisions that posi­tively impact the world.<\/li><li>Quality Obsessed<\/li><li>We are relentless in our pursuit of excellence, ensuring top-notch  quality in our products, services, and interactions with people.<\/li><li>Culture Catalyst<\/li><li>Our norms and behaviors drive a vibrant and inclusive culture where  every individual's unique perspective is valued and celebrated.<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "image_Hm9W4P",
+        "text_DkRedD"
+      ],
+      "settings": {
+        "heading": "Core Values",
+        "padding_top": 100,
+        "padding_bottom": 92
+      }
+    },
+    "about_gallery_slider_pwcGfP": {
+      "type": "about-gallery-slider",
+      "blocks": {
+        "image_87wpnV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Photography_by_Laporte-SickFit-1431.jpg"
+          }
+        },
+        "image_XRxDrk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2023-07-31_133059.png"
+          }
+        },
+        "image_4zGtKY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_1241.jpg"
+          }
+        },
+        "image_Ktj3ti": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot2023-12-05120645.png"
+          }
+        },
+        "image_eBrry4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sickles_Paden_2_yr.png"
+          }
+        },
+        "image_yJqYd3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-02-10_113501.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_87wpnV",
+        "image_XRxDrk",
+        "image_4zGtKY",
+        "image_Ktj3ti",
+        "image_eBrry4",
+        "image_yJqYd3"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "logo_section_6Pb6pD": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_wUzxye": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_hjAmYG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_JtXERq": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_ThahGd": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_wYHxew": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_hNMWeQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_wUzxye",
+        "logo_hjAmYG",
+        "logo_JtXERq",
+        "logo_ThahGd",
+        "logo_wYHxew",
+        "logo_hNMWeQ"
+      ],
+      "settings": {
+        "padding_top": 76,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "about_banner_YQFn7h",
+    "custom_image_text_DxBbnY",
+    "image_with_text_VAbbAF",
+    "value_section_XmDPTt",
+    "about_gallery_slider_pwcGfP",
+    "logo_section_6Pb6pD"
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "faq_section_PwJXVJ": {
+      "type": "faq-section",
+      "settings": {
+        "sub_heading": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "description": "",
+        "menu": "faq-menu",
+        "padding_top": 44,
+        "padding_bottom": 0
+      }
+    },
+    "faq_items_rdp6Qf": {
+      "type": "faq-items",
+      "blocks": {
+        "collapsible_row_WLEKbx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who founded SickFit?",
+            "icon": "none",
+            "row_content": "<p>SickFit was founded by Paden Sickles, a dynamic veteran, and former Army Engineer Officer, who saw a need for durable, high-performance socks that could withstand the demands of active lifestyles.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bzYBA3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is SickFit?",
+            "icon": "none",
+            "row_content": "<p>SickFit is a lifestyle brand dedicated to resilience, strength, and performance. We specialize in high-quality socks designed to empower individuals to push through challenges, both on and off the field. Our products are built for durability, style, and comfort, ensuring you stay ready for anything life throws your way.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4Crmtf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the meaning of SickFit?",
+            "icon": "none",
+            "row_content": "<p>\"SickFit\" is derived from the founder’s last name, Sickles, blending personal legacy with a bold statement. \"Sick\" represents something extraordinary and cutting-edge, while \"Fit\" reflects both physical fitness and a determined mindset. Together, SickFit embodies resilience, strength, and the drive to inspire others to push past their limits. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HPqbY3": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "But why socks?",
+            "icon": "none",
+            "row_content": "<p>SickFit LLC was started by Paden and Trace Sickles, a brother and sister duo. Paden runs the business side and Trace runs the marketing and sales side.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MVzErp": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Do you plan on extending the brand SickFit beyond socks?",
+            "icon": "none",
+            "row_content": "<p>SickFit LLC was started by Paden and Trace Sickles, a brother and sister duo. Paden runs the business side and Trace runs the marketing and sales side.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AQ9bFY": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Press contacts?",
+            "icon": "none",
+            "row_content": "<p>SickFit LLC was started by Paden and Trace Sickles, a brother and sister duo. Paden runs the business side and Trace runs the marketing and sales side.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_WLEKbx",
+        "collapsible_row_bzYBA3",
+        "collapsible_row_4Crmtf",
+        "collapsible_row_HPqbY3",
+        "collapsible_row_MVzErp",
+        "collapsible_row_AQ9bFY"
+      ],
+      "settings": {
+        "heading": "About the Brand",
+        "faq_id": "About",
+        "open_first_collapsible_row": true,
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "faq_items_LpriNF": {
+      "type": "faq-items",
+      "blocks": {
+        "collapsible_row_iwTLPm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take to process my order?",
+            "icon": "none",
+            "row_content": "<p>Once our team processes your order (3-5 business days), the transit time for USPS or other carriers will begin. For Priority\/Express shipping, orders are processed in approximately 2-3 business days. Standard shipping orders are processed in 3-5 business days. During holidays, processing times may take 7-10 business days.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kzmk86": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will it take to receive my order after it’s processed?",
+            "icon": "none",
+            "row_content": "<p>Once your order has been processed by our team, the delivery time will depend on the shipping service you selected:<\/p><ul><li><strong>Standard Shipping<\/strong>: 5-7 business days<\/li><li><strong>Priority\/Express Shipping<\/strong>: 3-5 business days<\/li><\/ul><p>Please note that these times are in addition to our processing days. We do not fulfill orders on Saturdays, Sundays, or holidays.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fqr4TJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I entered the wrong shipping address?",
+            "icon": "none",
+            "row_content": "<p>If you entered an incorrect shipping address, please email us immediately at <a href=\"mailto:support@sickfitofficial.com\" target=\"_blank\"><strong>support@sickfitofficial.com<\/strong><\/a>. If your order has already been fulfilled and is returned to us due to an unknown address, you will be responsible for any new shipping costs.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_a8TwjM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I do if my package is marked as delivered but I didn’t receive it?",
+            "icon": "none",
+            "row_content": "<p>Sometimes packages are scanned as delivered a few days before the actual delivery occurs. Please allow 5 business days to see if it arrives. If you still haven’t received your package after this timeframe, contact us at <a href=\"mailto:support@sickfitofficial.com\" target=\"_blank\"><strong>support@sickfitofficial.com<\/strong><\/a>, and we will assist you further.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pcGEYc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My package is missing or delayed. What should I do?",
+            "icon": "none",
+            "row_content": "<p>If you still haven't received your package after the estimated delivery window, please contact us at <a href=\"mailto:support@sickfitofficial.com\" target=\"_blank\"><strong>support@sickfitofficial.com<\/strong><\/a> within 30 days of your order date. If we do not receive communication within that period, we reserve the right to deny replacements or refund requests.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aLJzK4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change my order after it's been placed?",
+            "icon": "none",
+            "row_content": "<p>Once your order is placed, we are unable to make edits, such as changing item sizes or adding new items. You can:<\/p><ul><li>Contact customer service at <a href=\"mailto:support@sickfitofficial.com\" target=\"_blank\"><strong>support@sickfitofficial.com<\/strong><\/a> to cancel and refund your order, allowing you to place a new one with the correct items.<\/li><li>Allow your current order to be fulfilled and place a new order for additional items separately, or begin a return\/exchange process depending on your situation.<\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PJyyz4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you ship to APO\/FPO\/Military addresses?",
+            "icon": "none",
+            "row_content": "<p>Yes, we do! Please select the correct parcel service during checkout and ensure your APO\/FPO address is entered correctly. If an incorrect service is selected without an APO\/FPO address, the order will be canceled.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yrqpWn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you ship to PO Boxes?",
+            "icon": "none",
+            "row_content": "<p>Yes, we ship to PO Boxes via USPS. However, we do not take responsibility for lost or delayed packages sent to PO Boxes. It is the customer’s responsibility to contact USPS for any issues. For the best shipping experience, we recommend entering a home address.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9UxLxH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I do if my item arrives damaged or I’m missing an item?",
+            "icon": "none",
+            "row_content": "<p>If you receive a damaged item or are missing an item, please contact us at <a href=\"mailto:support@sickfitofficial.com\" target=\"_blank\"><strong>support@sickfitofficial.com<\/strong><\/a> immediately with your order number, a photo of the damaged item, and a photo of the packing slip.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_C6cUpn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the international shipping terms?",
+            "icon": "none",
+            "row_content": "<p>We ship internationally via UPS, FedEx, or DHL. Shipping carriers are selected based on the most efficient delivery. International customers are responsible for customs duties and brokerage fees in addition to shipping costs. Texas residents will incur sales tax based on state and county regulations.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_iwTLPm",
+        "collapsible_row_kzmk86",
+        "collapsible_row_fqr4TJ",
+        "collapsible_row_a8TwjM",
+        "collapsible_row_pcGEYc",
+        "collapsible_row_aLJzK4",
+        "collapsible_row_PJyyz4",
+        "collapsible_row_yrqpWn",
+        "collapsible_row_9UxLxH",
+        "collapsible_row_C6cUpn"
+      ],
+      "settings": {
+        "heading": "Orders & Shipping",
+        "faq_id": "Orders",
+        "open_first_collapsible_row": false,
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "faq_items_F4mW7r": {
+      "type": "faq-items",
+      "blocks": {
+        "collapsible_row_TckAa9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is SickFit’s return policy?",
+            "icon": "none",
+            "row_content": "<p>We can only accept returns and process refunds for items purchased directly from SickFit. To be eligible for a refund, returned merchandise must be unwashed, unworn, and with the original hang tags attached, or in the original packaging for items such as underwear. All garments are subject to inspection before a refund is processed.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mWnaF7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What proof of purchase is needed for a return?",
+            "icon": "none",
+            "row_content": "<p>A valid proof of purchase, such as the original receipt or email order confirmation, is required to process a refund. Additionally, if the purchase was made with a credit card, the same card will be needed to complete the refund process.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_79AVaX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I received the item as a gift?",
+            "icon": "none",
+            "row_content": "<p>Returns accompanied by a gift receipt can be exchanged or refunded as store credit for the transaction price listed on the gift receipt.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zrKjGQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are custom pieces eligible for a refund?",
+            "icon": "none",
+            "row_content": "<p>Refunds are not offered on custom pieces. However, if there is an issue with damaged merchandise, please contact a SickFit representative, and we will work to resolve the issue.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Kdkafg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there a shipping fee for returns?",
+            "icon": "none",
+            "row_content": "<p>Yes, a $10.00 shipping charge will be deducted from the amount of your refund. A printable shipping label will be provided upon submission of your return request.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nUJRgT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I return an item?",
+            "icon": "none",
+            "row_content": "<p>Pack your items securely and attach the provided shipping label. Once your package is received in our facility, it can take up to 7 business days for our returns department to process your return.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FipF84": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How are refunds processed?",
+            "icon": "none",
+            "row_content": "<p>Refunds will be processed to your original form of payment. Depending on your bank, please allow up to 10 days from the time the return is processed for the refund to be reflected in your account.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_TckAa9",
+        "collapsible_row_mWnaF7",
+        "collapsible_row_79AVaX",
+        "collapsible_row_zrKjGQ",
+        "collapsible_row_Kdkafg",
+        "collapsible_row_nUJRgT",
+        "collapsible_row_FipF84"
+      ],
+      "settings": {
+        "heading": "Returns",
+        "faq_id": "Returns",
+        "open_first_collapsible_row": false,
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "faq_items_FVDpxJ": {
+      "type": "faq-items",
+      "blocks": {
+        "collapsible_row_CDErUz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I wash my socks?",
+            "icon": "none",
+            "row_content": "<p>SickFit LLC was started by Paden and Trace Sickles, a brother and sister duo. Paden runs the business side and Trace runs the marketing and sales side.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_CDErUz"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Washing & Alterations",
+        "faq_id": "Washing",
+        "open_first_collapsible_row": false,
+        "padding_top": 72,
+        "padding_bottom": 56,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "faq_items_Dt3MwR": {
+      "type": "faq-items",
+      "blocks": {
+        "collapsible_row_TMJyLD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes SickFit socks unique?",
+            "icon": "none",
+            "row_content": "<p>SickFit socks are engineered with performance and comfort in mind. They feature moisture-wicking fabric, durable construction, and extra cushioning in key areas to ensure long-lasting comfort and support. Whether you’re training, working, or relaxing, our socks are built to keep you comfortable all day.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FHPUmc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are SickFit socks only for active people?",
+            "icon": "none",
+            "row_content": "<p>Not at all! While SickFit socks are engineered to meet the demands of athletes and active lifestyles, they’re also perfect for everyday wear. Whether you're at the gym, in the office, or simply lounging at home, our socks provide the comfort, durability, and style you need for any activity.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8qHnTq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What materials are used in SickFit socks?",
+            "icon": "none",
+            "row_content": "<p>Our socks are crafted from high-quality materials, including moisture-wicking cotton blends, polyester, and spandex. These fabrics ensure a comfortable, breathable fit that supports your feet during any activity.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8ThzFz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do SickFit socks come in different styles?",
+            "icon": "none",
+            "row_content": "<p>Yes, SickFit offers a range of sock styles, including quarter socks, boot socks, and performance socks. We also offer kid's socks and vibrant designs, like tie-dye, to suit every personality and occasion.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pKPgrq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are SickFit socks available in different colors and sizes?",
+            "icon": "none",
+            "row_content": "<p>Absolutely! SickFit socks come in a variety of colors, including classic shades like black, white, and gray, as well as bold, eye-catching options like maroon and tie-dye. We offer sizes for both adults and children to ensure the perfect fit for everyone.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dzVghR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do SickFit socks support foot health?",
+            "icon": "none",
+            "row_content": "<p>SickFit socks are designed with advanced features like moisture-wicking technology to keep feet dry, arch support for stability, and extra cushioning in high-impact areas to reduce fatigue and prevent blisters. Whether you're rucking, hiking, or just walking, SickFit socks are built to protect and support your feet.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9JbbLT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can SickFit socks handle intense activities like hiking or rucking?",
+            "icon": "none",
+            "row_content": "<p>Yes! SickFit socks are specifically designed to withstand intense physical activities, such as hiking, rucking, and long-distance walking. With reinforced heel and toe areas and moisture-wicking properties, they provide the durability and comfort needed for tough terrains.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_TMJyLD",
+        "collapsible_row_FHPUmc",
+        "collapsible_row_8qHnTq",
+        "collapsible_row_8ThzFz",
+        "collapsible_row_pKPgrq",
+        "collapsible_row_dzVghR",
+        "collapsible_row_9JbbLT"
+      ],
+      "settings": {
+        "heading": "Everything Socks",
+        "faq_id": "Everything-Socks",
+        "open_first_collapsible_row": false,
+        "padding_top": 72,
+        "padding_bottom": 56,
+        "button_text": "Shop Now",
+        "button_link": "https:\/\/sickfit-dev.myshopify.com\/collections\/all"
+      }
+    },
+    "logo_section_T4d8Jd": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_bb6VL4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_mxczJH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_jFTUAw": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_d3KmAT": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_b76kPh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_3VkJcw": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_bb6VL4",
+        "logo_mxczJH",
+        "logo_jFTUAw",
+        "logo_d3KmAT",
+        "logo_b76kPh",
+        "logo_3VkJcw"
+      ],
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_section_PwJXVJ",
+    "faq_items_rdp6Qf",
+    "faq_items_LpriNF",
+    "faq_items_F4mW7r",
+    "faq_items_FVDpxJ",
+    "faq_items_Dt3MwR",
+    "logo_section_T4d8Jd"
+  ]
+}

@@ -1,0 +1,316 @@
+/****************20-08-2024 start*********************/
+.contact .contact-description {
+    width: 100%;
+    max-width: 836px;
+    margin: 0 auto;
+    text-align: center;
+  padding-bottom:70px;
+} 
+.contact .page-width{
+  max-width:1220px;
+  margin:0 auto;
+}
+.contact .contact-description .contact-title{
+  font-family: "Gilroy";
+  font-weight:bold;
+  font-size: 54px;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+  color:#211E23;
+  margin:0;
+}
+.contact .contact-description .contact-text p{
+  font-family:var(--font-body-family);
+  font-weight:400;
+  font-size:18px;
+  line-height:30px;
+  letter-spacing: -0.02em;
+  color:#211E23;
+  margin-top:6px;
+  margin-bottom:0px;
+}
+.contact .row{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin:0px -20px;
+}
+.contact .col-6{
+  width:50%;
+  padding:0px 20px;
+}
+.contact .contact-image{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  margin:0px -15px;
+  margin-top:25px;
+}
+.contact .contact-image .single-image{
+  width:55%;
+  padding:0px 15px;
+}
+.contact .contact-image .right-side-image{
+  width:45%;
+  padding:0px 15px;
+}
+.contact .contact-image .right-side-image img:last-child {
+    margin-top: 20px;
+    min-height: 242px;
+    object-fit: cover;
+}
+.contact .contact-image img{
+  width:100%;
+  height:100%;
+  border-radius:16px;
+}
+.contact .contact-form {
+    padding-left: 28px;
+}
+.contact .contact-form .field__label{
+  position:unset;
+  font-family: "Gilroy";
+  font-weight:bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color:#211E23;
+  margin-bottom:16px;
+  display:block;
+}
+.contact .contact-form .field{
+  display:block;
+  margin-bottom:3rem;
+}
+.contact .contact-form .field:before{
+  display:none;
+}
+.contact .contact-form .field:after{
+  display:none;
+}
+.contact .contact-form input, .contact .contact-form textarea{
+  background:#fff;
+  border:1px solid #211E23;
+  border-radius:8px;
+  padding:20px 24px;
+}
+.contact .contact-form input:active, .contact .contact-form input:focus, .contact .contact-form textarea:active, .contact .contact-form textarea:focus{
+  border:2px solid #211E23;
+}
+.contact .contact-form textarea{
+  min-height:19.8rem;
+}
+.contact .contact-form input::placeholder, .contact .contact-form textarea::placeholder{
+  opacity:1;
+  font-family:var(--font-body-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color:#8A868C;
+}
+.contact .contact-form input{
+  height:6.4rem;
+}
+.contact .contact-form .contact__button{
+  margin-top:4.8rem;
+}
+.contact-form-success h2{
+  font-family: "Gilroy";
+  font-size: 40px;
+  font-weight:bold;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin:0;
+  color:#211E23;
+}
+.contact-form-success p{
+  font-family: "Gilroy";
+  font-size:24px;
+  font-weight:bold;
+  line-height:32px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-top:8px;
+  margin-bottom:0px;
+  color:#211E23;
+}
+.contact-form-success svg{
+  width:100%;
+  max-width:100px;
+  margin:0 auto;
+  padding-top:24px;
+  display:block;
+}
+.contact.submitted .field, .contact.submitted .contact__button{
+   display:none;
+}
+.contact.submitted .row{
+  align-items:center;
+}
+.contact .contact-form input[aria-describedby="ContactForm-email-error"], .contact .contact-form .field__input.error{
+  border:1px solid rgba(231, 32, 39, 1);
+  background: rgba(231, 32, 39, 0.1);
+}
+.contact .contact-form .button:disabled{
+  opacity:1;
+}
+.contact .contact-form .contact__field-error .form__message, .contact .contact-form .contact__field-error {
+    color: #e72027;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.contact .contact-form  .contact-form-success {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.contact .contact-image .right-side-image img:first-child {
+    min-height: 370px;
+    object-fit: cover;
+}
+/*************************** RESPONSIVE ************************************/
+@media screen and (max-width:1024px){
+.contact .col-6 {
+    width:100%;
+    padding:0;
+}
+.contact .col-6:first-child{
+  order:2;
+}
+.contact .col-6:last-child{
+  order:1;
+}
+.contact .contact-form {
+    padding:0px 90px;
+}
+.contact .contact-image{
+  padding:0px 62px;
+  margin-top:18px;
+}
+.contact{
+  padding-top:30px !important;
+  padding-bottom:78px !important;
+}
+.contact .contact-description .contact-title {
+    font-size: 42px;
+    line-height: 54px;
+}
+.contact .contact-description {
+    padding-bottom: 78px;
+}
+.contact .row{
+  margin:0;
+}  
+}
+
+@media screen and (max-width:767px){
+.contact{
+  padding-top:30px !important;
+  padding-bottom:37px !important;
+}
+.contact .contact-form {
+    padding:0;
+}
+.contact .contact-image {
+    padding:0;
+    margin-top:43px;
+}
+.contact .contact-description .contact-title {
+    font-size: 40px;
+    line-height: 48px;
+}
+.contact .contact-description {
+    padding-bottom: 54px;
+} 
+.contact-form-success h2 {
+    font-size: 28px;
+    line-height: 40px;
+}
+.contact .contact-image .single-image img {
+    /* padding: 48px 0; */
+    max-height: 425px;
+    object-fit: cover;
+}
+.contact .contact-image .right-side-image img:first-child {
+    min-height: 280px;
+    object-fit: cover;
+}
+.contact .contact-image .right-side-image img:last-child {
+    margin-top: 20px;
+    min-height: 185px;
+    object-fit: cover;
+}  
+}
+
+@media screen and (max-width:420px){
+ .contact .contact-image .right-side-image img:first-child {
+    min-height: 200px;
+    object-fit: cover;
+ } 
+.contact .contact-image .right-side-image img:last-child {
+    margin-top: 20px;
+    min-height: 140px;
+    object-fit: cover;
+}
+.contact .contact-image .single-image {
+    width: 55%;
+    padding: 0px 10px;
+}
+.contact .contact-image .right-side-image {
+    width: 45%;
+    padding: 0 10px;
+}
+  .contact .contact-image .right-side-image img:last-child {
+    margin-top: 10px;
+    min-height: 140px;
+    object-fit: cover;
+}
+}
+/****************20-08-2024 end*********************/
+
+.contact img {
+  max-width: 100%;
+}
+
+.contact .form__message {
+  align-items: flex-start;
+}
+
+.contact .icon-success {
+  margin-top: 0.2rem;
+}
+
+.contact .field {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact__button {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+}

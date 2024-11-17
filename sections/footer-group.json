@@ -1,0 +1,67 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_fYMA9b": {
+          "type": "text",
+          "settings": {
+            "heading": "Thank You!",
+            "subtext": "<p>For supporting a woman-owned, veteran-owned, and minority- owned global brand. <\/p>"
+          }
+        },
+        "link_list_w8VUJn": {
+          "type": "link_list",
+          "settings": {
+            "heading": "My Account",
+            "menu": "footer"
+          }
+        },
+        "link_list_bhKTRD": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "quick-links"
+          }
+        },
+        "brand_information_VqENbC": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "shop_shop_login_button_app_block_gAjhrL": {
+          "type": "shopify:\/\/apps\/shop\/blocks\/shop-login-button-app-block\/7cab7c4a-1dfc-4b7e-8e53-31f104f2fa4e",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "text_fYMA9b",
+        "link_list_w8VUJn",
+        "link_list_bhKTRD",
+        "brand_information_VqENbC",
+        "shop_shop_login_button_app_block_gAjhrL"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 68,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

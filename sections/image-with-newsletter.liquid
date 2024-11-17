@@ -1,0 +1,483 @@
+<!----------------- image with newsletter ------------------------>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<span id="contact_form"></span>
+<section class="image-with-newsletter section-{{ section.id }}-padding">
+   <div class="custom-newsletter">
+        <div class="row">
+           <div class="col-3 wp-col">
+              {%- if section.settings.image1 != blank -%}
+                  <img src="{{ section.settings.image1 | img_url: '' }}" alt="newsletter-img">
+              {% endif %}
+           </div>
+          <div class="col-6 wp-col">
+              <div class="custom-newsletter-form">
+                <div class="wp-custom-form">
+                  {%- if section.settings.heading != blank -%}
+                   <h3 class="newsletter-heading">
+                    {{ section.settings.heading }}
+                   </h3>
+                   {% endif %}
+                  {%- if section.settings.description != blank -%}
+                    <div class="newsletter-text">
+                       {{ section.settings.description }}
+                    </div>
+                  {% endif %}
+                  
+                  {% form 'customer', class: 'newsletter-form', novalidate: 'novalidate' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+  <div
+    class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+      style="--animation-order: {{ forloop.index }};"
+    {% endif %}
+  >
+    <div class="field">
+      <input
+        type="email"
+        name="contact[email]"
+        class="field__input"
+        value="{{ form.email }}"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        placeholder="name@example.com"
+        id="newsletter-email"
+      >
+      <label class="field__label">{{ 'newsletter.label' | t }}</label>
+      <button
+        type="submit"
+        class="newsletter-form__button field__button"
+        name="commit"
+        aria-label="{{ 'newsletter.button_label' | t }}"
+        disabled
+        id="newsletter-submit"
+      >
+        {% render 'icon-arrow' %}
+      </button>
+    </div>
+    <small class="newsletter-error newsletter-form__message form__message" style="display:none;">
+       Please enter a valid email address.
+    </small>
+  </div>
+
+  {%- if form.posted_successfully? -%}
+    <h3
+      class="newsletter-form__message newsletter-form__message--success form__message"
+      tabindex="-1"
+      autofocus
+    >
+      <div class="news-letter-flex">
+        {% render 'main-icon' %}
+        <div class="success-text">
+          <h4>You’re all set!</h4>
+          <p>Thanks for subscribing!</p>
+        </div>
+    </div>
+    </h3>
+  {%- endif -%}
+{% endform %}
+               </div>
+          </div>
+           </div>
+          <div class="col-3 wp-col">
+             {%- if section.settings.image2 != blank -%}
+                  <img src="{{ section.settings.image2 | img_url: '' }}" alt="newsletter-img">
+              {% endif %}
+           </div>
+        </div>
+   </div>
+</section>
+
+{% style %}
+.custom-newsletter .newsletter-form__field-wrapper  .field__label{
+  display:none;
+}
+.custom-newsletter .newsletter-form__field-wrapper input::placeholder{
+  opacity:1;
+}
+
+ .newsletter-error{
+   font-size:12px;
+   line-height:20px;
+   color:#F2494E;
+   font-weight:600;
+   margin-top:5px !important;
+   display: none;
+ }
+.formm-submitted .field__input{
+    display:none;
+} 
+.newsletter-form__message--success .success-text h4 {
+  font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 24px;
+    line-height: 34px;
+    margin: 0;
+    color:#fff;
+    letter-spacing: -.02em;
+} 
+.newsletter-form__message--success .success-text p {
+    font-family:var(--font-body-family);
+    font-weight:400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    color:#fff;
+    letter-spacing: -.01em;
+}
+.newsletter-form__message--success  svg{
+    width:60px;
+    height:60px;
+  margin-right:16px;
+}
+.custom-newsletter   .newsletter-form__message {
+    justify-content: center;
+  margin-top:0px;
+}
+.custom-newsletter .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.newsletter-form__field-wrapper .has-error {
+  background: rgba(231, 32, 39, 0.1);
+  border:1px solid rgba(231, 32, 39, 1);
+}
+.custom-newsletter img{
+  display:block;
+  width:100%;
+}
+.custom-newsletter{
+  background-color:#18151A;
+}
+.custom-newsletter .col-3{
+  width:30%;
+}
+.custom-newsletter .col-6{
+  width:40%;
+}
+.newsletter-form__message {
+    justify-content: center;
+    width: 100%;
+}  
+.custom-newsletter .newsletter-form__field-wrapper .field {
+    z-index: 0;
+    background: #fff;
+    border-radius: 10px;
+}  
+.custom-newsletter  .newsletter-form__field-wrapper .newsletter-form__button {
+    background-color: transparent !important;
+}
+.custom-newsletter .newsletter-text p {
+    font-family:var(--font-body-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.custom-newsletter-form{
+    border: 20px solid transparent; /* Adjust the border width as needed */
+    border-image: url('https://cdn.shopify.com/s/files/1/0601/6955/1949/files/Group_21.png?v=1723696728') 30 round; 
+   -webkit-border-image: url('https://cdn.shopify.com/s/files/1/0601/6955/1949/files/Group_21.png?v=1723696728') 30 round;
+   -moz-border-image: url('https://cdn.shopify.com/s/files/1/0601/6955/1949/files/Group_21.png?v=1723696728') 30 round;
+   -o-border-image: url('https://cdn.shopify.com/s/files/1/0601/6955/1949/files/Group_21.png?v=1723696728') 30 round;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.wp-custom-form {
+   padding:40px;
+   background-color:#18151A;
+}
+  .custom-newsletter .newsletter-heading {
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 54px;
+    line-height: 62px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+.newsletter-form__message--success {
+    margin-top: 2rem;
+    color: #fff;
+} 
+
+ @media screen and (max-width:1220px){
+   .custom-newsletter .row .wp-col:first-child {order: 2;}
+   .custom-newsletter .row .wp-col:nth-child(2) {order: 1;}
+   .custom-newsletter .row .wp-col:last-child {order: 3;}
+.custom-newsletter .col-3{
+  width:50%;
+}
+.custom-newsletter .col-6{
+  width:100%;
+}
+.custom-newsletter-form {
+    margin: 48px auto;
+}
+}
+ @media screen and (max-width:767px){
+  .custom-newsletter .row .wp-col:first-child {display:none;}
+.custom-newsletter .col-3{
+  width:100%;
+}
+ .custom-newsletter .wp-custom-form {
+    padding: 20px;
+}   
+.custom-newsletter .newsletter-heading {
+    font-size: 30px;
+    line-height: 40px;
+}
+.custom-newsletter-form {
+    margin: 24px auto;
+}
+.custom-newsletter .row .wp-col:nth-child(2) {padding:0px 24px;}
+ }
+.image-with-newsletter{
+  padding-top:50px;
+}  
+  }
+@media screen and (max-width:420px){
+  .custom-newsletter .newsletter-heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .wp-custom-form {
+    padding: 20px;
+}
+  .newsletter-form__field-wrapper .field__label {
+    top: 50%;
+    left:15px;
+    font-size: 10px;
+}
+.custom-newsletter input::placeholder{
+  font-size:8px;;
+} 
+.newsletter-form__field-wrapper .field__input {
+    padding-left: 10px;
+  padding-right:4rem;
+} 
+.newsletter-form__field-wrapper .newsletter-form__button {
+    right: 5px;
+}
+
+ }  
+{% endstyle %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.newsletter-form');
+    const emailField = form.querySelector('input[name="contact[email]"]');
+    const submitButton = form.querySelector('.newsletter-form__button');
+    const errorMessage = form.querySelector('.newsletter-error');
+    const successMessage = form.querySelector('.newsletter-form__message--success');
+    
+    // Existing duplicate email message element
+    let duplicateEmailMessage = form.querySelector('.has-duplicate-error-message');
+
+    // If the duplicate email message doesn't exist, create it
+    if (!duplicateEmailMessage) {
+        duplicateEmailMessage = document.createElement('small');
+        duplicateEmailMessage.classList.add('newsletter-error', 'newsletter-form__message', 'form__message', 'has-duplicate-error-message');
+        duplicateEmailMessage.style.display = 'none';
+        duplicateEmailMessage.innerHTML = `<svg class="error-icon" style="display: none;">...</svg> This email is already subscribed.`;
+        form.appendChild(duplicateEmailMessage);
+    }
+
+    function hideInputFields() {
+        form.querySelectorAll('.newsletter-form__field-wrapper .field__input').forEach(input => {
+            input.style.display = 'none';
+        });
+    }
+
+    function resetForm() {
+        form.querySelectorAll('.newsletter-form__field-wrapper .field__input').forEach(input => {
+            input.style.display = ''; // Reset the display style to show input fields
+        });
+        if (successMessage) {
+            successMessage.style.display = 'none'; // Hide success message on reload
+        }
+        duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message on reset
+    }
+
+    const isHardReload = performance.getEntriesByType('navigation')[0].type === 'reload';
+
+    if (isHardReload) {
+        localStorage.removeItem('formSubmitted');
+        localStorage.removeItem('duplicateEmailError'); // Clear the duplicate email error on hard reload
+        resetForm(); // Reset form to its normal state after hard reload
+    }
+
+    if (successMessage && successMessage.style.display !== 'none') {
+        // Success message is displayed, hide duplicate email message
+        duplicateEmailMessage.style.display = 'none';
+        hideInputFields();
+    } else if (localStorage.getItem('formSubmitted') === 'true' && !isHardReload) {
+        hideInputFields();
+        if (successMessage) {
+            successMessage.style.display = 'block'; // Show success message if form was submitted
+        }
+        duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message
+    }
+
+    if (localStorage.getItem('duplicateEmailError') === 'true') {
+        duplicateEmailMessage.style.display = 'block';
+        submitButton.disabled = true; // Disable the submit button if duplicate email error persists
+    }
+
+    function validateEmail() {
+        const emailValue = emailField.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValid = emailPattern.test(emailValue);
+
+        if (emailValue === '') {
+            errorMessage.style.display = 'none';
+            duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message when input is cleared
+            submitButton.disabled = true;
+            emailField.classList.add('has-error');
+        } else if (!isValid) {
+            errorMessage.style.display = 'block';
+            duplicateEmailMessage.style.display = 'none'; // Hide duplicate email message for invalid format
+            submitButton.disabled = true;
+            emailField.classList.add('has-error');
+        } else {
+            errorMessage.style.display = 'none';
+            submitButton.disabled = false;
+            emailField.classList.remove('has-error');
+            localStorage.removeItem('duplicateEmailError'); // Reset duplicate error state when valid email is entered
+            duplicateEmailMessage.style.display = 'none'; // Hide the duplicate error when a valid email is entered
+        }
+    }
+
+    emailField.addEventListener('input', validateEmail);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        validateEmail();
+
+        if (!submitButton.disabled) {
+            const formData = new FormData(form);
+
+            // Reset the duplicate email message before each submission
+            duplicateEmailMessage.style.display = 'none';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
+            })
+            .then(response => {
+                if (response.status === 422) {
+                    // Duplicate email error
+                    duplicateEmailMessage.style.display = 'block'; // Show duplicate error
+                    localStorage.setItem('duplicateEmailError', 'true'); // Store duplicate email error in localStorage
+                } else if (response.ok) {
+                    hideInputFields();
+                    if (successMessage) {
+                        successMessage.style.display = 'block'; // Show success message
+                    }
+                    duplicateEmailMessage.style.display = 'none'; // Hide duplicate email error message
+                    localStorage.setItem('formSubmitted', 'true'); // Mark form as submitted in localStorage
+                } else {
+                    // Handle other errors if necessary
+                    console.error('Unexpected error:', response);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Optionally handle fetch error
+            });
+        }
+    });
+});
+
+</script>
+
+<script>
+  function scrollToNewsletterImage() {
+        const offset = 100; // Adjust this value to control the offset
+        const newsletterImagePosition = imageWithNewsletter.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: newsletterImagePosition,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+{% schema %}
+  {
+    "name": "Image With Newsletter",
+    "settings": [
+      {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image1"
+        },
+      {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image2"
+        },
+      {
+          "type": "text",
+          "id": "heading",
+          "label": "Form Title"
+        },
+      {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+  "presets": [
+    {
+      "name": "Image With Newsletter",
+    }
+  ]
+  }
+{% endschema %}

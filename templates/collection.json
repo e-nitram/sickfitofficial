@@ -1,0 +1,136 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "tab_pBJNAD": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Socks",
+            "tab_collection": "shopify:\/\/collections\/tops"
+          }
+        },
+        "tab_w3Y8DP": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Collections",
+            "tab_collection": "shopify:\/\/collections\/tops"
+          }
+        },
+        "tab_QhbPjw": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Apparel",
+            "tab_collection": "shopify:\/\/collections\/tank-tops"
+          }
+        },
+        "tab_atQY8x": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Hats & Underwear",
+            "tab_collection": "shopify:\/\/collections\/socks"
+          }
+        },
+        "tab_PLNqPp": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Accessories & More",
+            "tab_collection": "shopify:\/\/collections\/tops"
+          }
+        }
+      },
+      "block_order": [
+        "tab_pBJNAD",
+        "tab_w3Y8DP",
+        "tab_QhbPjw",
+        "tab_atQY8x",
+        "tab_PLNqPp"
+      ],
+      "settings": {
+        "shop_title": "Shop SickFit",
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "logo_section_E4XLJ9": {
+      "type": "logo-section",
+      "blocks": {
+        "logo_gykcLa": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/f7c84576985b2f8962e86fcaa2f844d0.png"
+          }
+        },
+        "logo_LG8R64": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/NaVOBA_VeteranOwned_Logo_Color_LightBG_Web_300x300_c124c0a6-7226-404a-8cdb-545eac86df47.png"
+          }
+        },
+        "logo_Ymk4qz": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/d05cc40d7d6a9301b4d304b99f588c71.png"
+          }
+        },
+        "logo_kPTCzW": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/cf18f165eb647580a128625623abb544.png"
+          }
+        },
+        "logo_CMbW8L": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/8bba19055a2ea7f7298bd9f74e726418.png"
+          }
+        },
+        "logo_JAyaCA": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/79024b71c677ac63636424eb8286b65b.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_gykcLa",
+        "logo_LG8R64",
+        "logo_Ymk4qz",
+        "logo_kPTCzW",
+        "logo_CMbW8L",
+        "logo_JAyaCA"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "logo_section_E4XLJ9"
+  ]
+}

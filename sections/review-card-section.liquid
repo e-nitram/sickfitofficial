@@ -1,0 +1,262 @@
+<!-------------- Review card section ------------------>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="review-card-section section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="main-title">{{ section.settings.title }}</h2>
+    {% endif %}
+     <div class="reviews-row">
+      {% for block in section.blocks %} 
+         <div class="col-4">
+           <div class="review-card">
+             <a href="{{ block.settings.button_link }}" class="review-btn">{{ block.settings.button_text}}</a>
+             {%- if block.settings.rating_img != blank -%}
+                  <img src="{{ block.settings.rating_img | img_url: '' }}" alt="rating_img" >
+              {% endif %}
+               <span>{{ block.settings.rating_text }}</span>
+             <div class="review-text-box">
+               <div class="review-text-items">
+                   <h3 class="review-card-title">{{ block.settings.card_title }}</h3>
+                   <div class="description">
+                   {{ block.settings.description}}
+                   </div>
+              </div>
+               <h4 class="client-name">{{ block.settings.name}}</h4>
+             </div>
+           </div>
+         </div>
+       {% endfor %}
+     </div>
+  </div>
+</section>
+
+
+<!------ style ----------->
+{% style %}
+.review-card-section .main-title{
+  margin-bottom:48px;
+  text-align:center;
+}
+.review-card-section .reviews-row{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap:30px;
+}
+
+.review-card-section .review-card{
+    background-color:rgba(255, 255, 255, 1);
+    box-shadow: 8px 8px 48px 0px rgba(33, 30, 35, 0.04);
+    padding:48px 30px;
+    border-radius:8px;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section.review-card-section .page-width {
+    max-width: 1250px;
+}
+ section.review-card-section .review-card .review-btn {
+    display: inline-block;
+    background: var(--Surface_lighter, rgba(226, 220, 229, 1));
+    border: 1px solid rgba(226, 220, 229, 1);
+    padding: 6px 16px;
+    border-radius: 100px;
+    text-decoration:none;
+    cursor:pointer;
+    max-width: fit-content;
+   transition:0.5s;
+}
+ section.review-card-section .review-card .review-btn:hover {
+    background: transparent;
+}
+section.review-card-section .review-card .review-btn p{
+    font-family:var(--font-body-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color:rgba(33, 30, 35, 1);
+    margin:0;
+}
+section.review-card-section  .review-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+section.review-card-section .review-card .review-btn p strong{
+    font-weight:700;
+    color:rgba(231, 32, 39, 1);
+    margin:0;
+}
+section.review-card-section .review-card img {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: fit-content;
+}
+section.review-card-section .review-card span{
+    display:block;
+    font-family:var(--font-body-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color:rgba(120, 118, 122, 1);
+    margin:0;
+}
+section.review-card-section .review-card .review-card-title {
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 30px;
+    line-height:36px;
+    letter-spacing: -0.02em;
+    color: rgba(33, 30, 35, 1);
+    margin-top:24px;
+    margin-bottom:10px;
+}
+section.review-card-section .review-card .description p {
+    font-family:var(--font-body-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color:rgba(33, 30, 35, 1);
+    margin:0;
+}
+section.review-card-section .review-card .client-name {
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 20px;
+    line-height:32px;
+    letter-spacing: -0.02em;
+    color: rgba(33, 30, 35, 1);
+    margin:0;
+    margin-top:24px;
+}
+
+/******************** Responsive ***********************/
+@media screen and (max-width:1024px){
+.review-card-section .reviews-row{
+    grid-template-columns: 1fr 1fr;
+}
+ section.review-card-section{
+   padding-top:18px;
+   padding-bottom:78px;
+ } 
+}
+@media screen and (max-width:767px){
+.review-card-section .reviews-row{
+    grid-template-columns: 1fr;
+}
+ section.review-card-section {
+    padding-top: 0;
+    padding-bottom: 48px;
+}
+.review-card-section .main-title{
+  margin-bottom:30px;
+  margin-top:50px;
+}
+}
+
+
+  
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "Review Card",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+        },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+        },
+        {
+          "type": "richtext",
+          "id": "button_text",
+          "label": "Button Text",
+        },
+        {
+          "type": "image_picker",
+          "id": "rating_img",
+          "label": "Rating Image",
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating Text",
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Client Name"
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Review Card",
+      }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,240 @@
+<!------------ value-section ----------------->
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="our-value-section section-{{ section.id }}-padding">
+    <div class="page-width">
+       {%- if section.settings.heading  != blank -%}
+      <h2 class="main-title">{{ section.settings.heading }}</h2>
+    {% endif %}
+      <div class="row">
+        {% for block in section.blocks %}
+           {% case block.type %}
+             {% when 'image' %}
+               <div class="col-6">
+                  <div class="our-value-image">
+                     <div class="signle-image">
+                       {%- if block.settings.value_image1  != blank -%}
+                          <img src="{{ block.settings.value_image1 | img_url: '' }}" alt="value-image">
+                       {% endif %}
+                      </div>
+                       <div class="right-side-image">
+                         <div class="our-value-card">
+                          {%- if block.settings.value_image2  != blank -%}
+                             <img src="{{ block.settings.value_image2 | img_url: '' }}" alt="value-image">
+                          {% endif %}
+                           {%- if block.settings.value_image3 != blank -%}
+                             <img src="{{ block.settings.value_image3 | img_url: '' }}" alt="value-image">
+                           {% endif %}
+                         </div>
+                       </div>
+                  </div>
+               </div>
+             {% when 'text' %}
+               <div class="col-6">
+                 <div class="our-value-content">
+                    {%- if block.settings.description  != blank -%}
+                       <div class="our-value-text">
+                         {{ block.settings.description }}
+                       </div>
+                     {% endif %}
+                 </div>
+               </div>
+            {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+</section>
+
+{% style %}
+.our-value-section .row {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin:0px -20px;
+}
+ .our-value-section .col-6{
+    width:50%;
+    padding:0px 20px;
+ }
+.our-value-section .our-value-image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin:0px -15px;
+}
+.our-value-section .main-title{
+  text-align:center;
+  margin-bottom:84px;
+}
+.our-value-section .our-value-image img {
+    width:100%;
+    display:block;
+    border-radius:16px;
+}  
+.our-value-section .our-value-content {
+    padding-left: 24px;
+}
+.our-value-section .right-side-image, .our-value-section .signle-image {
+    width: 50%;
+    padding: 0px 15px;
+}
+.our-value-section .our-value-image .our-value-card img:first-child{
+  margin-bottom:30px;
+}
+.our-value-section .our-value-content .our-value-text ul li:first-child{
+  margin-top:0px !important;
+}
+.our-value-section .our-value-content .our-value-text ul li{
+  list-style:none;
+}
+.our-value-section .our-value-content .our-value-text ul{
+  padding-left:0;
+}  
+.our-value-section .our-value-content .our-value-text ul li:nth-child(odd) { 
+  font-family: "Gilroy";
+  font-weight:bold;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color:#211E23;
+  margin-top:40px;
+
+}
+.our-value-section .our-value-content .our-value-text ul li:nth-child(even) {
+  font-family:var(--font-body-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color:#211E23;
+  margin:14px 0;
+}
+section.our-value-section .page-width {
+    padding: 0px 85px;
+}  
+
+  /************************* Responsive **********************/
+
+@media screen and (max-width: 1024px){
+section.our-value-section .page-width {
+    padding: 0px 75px;
+} 
+.our-value-section .col-6 {
+    width: 100%;
+} 
+.our-value-section .main-title {
+    margin-bottom: 62px;
+}
+.our-value-section .our-value-content {
+    padding-left:0px;
+    margin-top:54px;
+   text-align:center;
+} 
+.our-value-section{
+  padding-bottom:60px;
+} 
+}
+@media screen and (max-width:767px){
+.our-value-section .main-title {
+    margin-bottom: 41px;
+}
+.our-value-section {
+    padding-bottom: 48px;
+
+}  
+section.our-value-section .page-width {
+    padding: 0px 24px;
+}  
+}
+  
+{% endstyle %}
+  
+{% schema %}
+  {
+    "name": "Value Section",
+    "settings": [
+      {
+          "type": "text",
+          "id": "heading",
+          "label": "Title"
+        },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ],
+  "max_blocks": 2,
+  "blocks": [
+     {
+       "name": "Image",
+       "type": "image",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "value_image1",
+           "label": "Value Image1"
+         },
+         {
+           "type": "image_picker",
+           "id": "value_image2",
+           "label": "Value Image2"
+         },
+         {
+           "type": "image_picker",
+           "id": "value_image3",
+           "label": "Value Image3"
+         },
+       ],
+     },
+    {
+       "name": "Text",
+       "type": "text",
+       "settings": [
+         {
+           "type": "richtext",
+           "id": "description",
+           "label": "Description"
+         }
+       ],
+     }
+  ],
+    "presets": [
+      {
+        "name": "Value Section",
+      }
+  ]
+  }
+{% endschema %}

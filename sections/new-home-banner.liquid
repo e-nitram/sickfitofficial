@@ -1,0 +1,533 @@
+<!-----------------home banner-------------------->
+<section class="home-banner">
+    <div class="page-width">
+        <div class="row">
+            <div class="col-5">
+               <div class="home-banner-content">
+                 <div class="review-text">
+                   {%- if section.settings.review_number != blank -%}
+                     <h6 class="review">{{ section.settings.review_number }}<span>{% render 'custom-review' %}</span>{{ section.settings.review_text }}</h6>
+                   {% endif %}
+                   {%- if section.settings.product_title != blank -%}
+                     <h2 class="product-title">{{ section.settings.product_title }}</h2>
+                   {% endif %}
+                   {%- if section.settings.product_description != blank -%}
+                     <div class="rte">{{ section.settings.product_description }}</div>
+                   {% endif %}
+                   {%- if section.settings.button_link != blank -%}
+                     <a href="{{ section.settings.button_link }}" class="main-btn"><span>{{ section.settings.button_text}}</span></a>
+                   {% endif %}
+                  
+                 </div>
+               </div>
+            </div>
+            <div class="col-7">
+              <div class="home-banner-image">
+                {%- if section.settings.product_image != blank -%}
+                  <img src="{{ section.settings.product_image | img_url: '' }}" class="small-hide" alt="">
+                {% endif %}
+                {%- if section.settings.mobile_product_image != blank -%}
+                  <img src="{{ section.settings.mobile_product_image | img_url: '' }}" class="medium-hide large-up-hide">
+                {% endif %}
+                <div class="icon-with-text ">
+                  {% for block in section.blocks %}
+                      <div class="circle circle{{ forloop.index }} medium-hide large-up-hide"></div>
+                      <div class="icon-items icon-items{{ forloop.index }}"><span>
+                        {{ block.settings.svg_icon }}
+                        {{ block.settings.icon_title }}</span>
+                        <div class=" dummy-text"><small>{{ block.settings.description_text }}</small></div>
+                      </div>
+                  {% endfor %}
+                        
+                </div>
+                        
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% style %}
+.home-banner .page-width{
+  position:relative;
+  background-image:url('{{section.settings.bg_image | img_url:''}}');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+.home-banner .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin:0px -10px;
+}
+.home-banner .col-5{
+  width:40%;
+  padding:0px 10px;
+}
+.home-banner .col-7{
+  width:60%;
+  padding:0px 10px;
+}
+.home-banner .review {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height:16px;
+    letter-spacing: -0.01em;
+    color: #78767A;
+    margin-top:0px;
+    margin-bottom:22px;
+    display: flex;
+    align-items: center;
+}  
+.home-banner .product-title {
+    font-family: "Gilroy";
+    font-size: 42px;
+    line-height: 54px;
+    font-weight:bold;
+    letter-spacing: -0.02em;
+    color:#211E23;
+    margin:0px;
+}
+.home-banner .rte p {
+    font-family: "Gilroy";
+    font-weight:normal;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    margin-top:15px;
+}
+.home-banner .main-btn{
+    margin-top:40px;
+  }
+.home-banner .home-banner-image img {
+      display: block;
+      width: 100%;
+  }
+.home-banner .review span {
+    display:block;
+    margin: 0px 8px;
+}
+/*************dummy text*************/
+.home-banner .dummy-text{
+    font-family: var(--font-body-family);
+    font-weight: 400;
+    line-height:20px;
+    font-size: 14px !important;
+    left: 0;
+    position: absolute;
+    margin-top:10px;
+    width:300px;
+    color:#000;
+    display:none;
+    background-color:#fff;
+    padding:10px 20px;
+    z-index:9;
+   box-shadow: 8px 8px 48px 0px #211E2314;
+}
+.home-banner .icon-with-text .icon-items1 .dummy-text{
+   margin-top: 8px;
+}
+  .home-banner .icon-with-text .icon-items2 .dummy-text{
+   margin-top: 8px;
+}
+.home-banner .icon-with-text .icon-items3 .dummy-text {
+    margin-top: 0px;
+}
+.home-banner .icon-with-text .icon-items4 .dummy-text {
+    margin-top: 0px;
+}
+.home-banner .icon-with-text .icon-items5 .dummy-text {
+    margin-top: 8px;
+    right: 0;
+    left: auto;
+}
+.home-banner .icon-with-text .icon-items6 .dummy-text {
+    margin-top: 8px;
+  right: 0;
+    left: auto;
+}
+.home-banner .icon-with-text .icon-items7 .dummy-text{
+   margin-top: 8px;
+  right: 0;
+    left: auto;
+}
+ .home-banner .icon-with-text .icon-items:hover .dummy-text{
+   display:block;
+} 
+/**************************/ 
+/****************************************/
+.home-banner .home-banner-image{
+  position:relative;
+  /* overflow:hidden; */
+}
+.home-banner .icon-with-text span {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size:18px;
+    line-height:26px;
+    color:#211E23;
+    position:relative;
+    padding-bottom:10px;
+    letter-spacing: -0.01em;
+    cursor:pointer;
+}
+.home-banner .icon-with-text span svg {
+    width: 36px;
+    height: 36px;
+    display:block;
+    margin-right:5px;
+}
+.home-banner .icon-with-text span.icon-items {
+    left: 0;
+    position: absolute;
+    margin-top: 54px;
+    line-height: 19px;
+    font-size: 14px;
+    width: 100%;
+    
+}
+.home-banner .icon-with-text .icon-items1 {
+    position: absolute;
+    top: 31%;
+}
+.home-banner .icon-with-text .icon-items2 {
+    position: absolute;
+    top: 55%;
+    left: 7%;
+}
+.home-banner .icon-with-text .icon-items3 {
+    position: absolute;
+    bottom: 24%;
+    left: 5%;
+}
+.home-banner .icon-with-text .icon-items4 {
+    position: absolute;
+    bottom: 9%;
+    left: 13%;
+}
+.home-banner .icon-with-text .icon-items5 {
+    position: absolute;
+    top: 18%;
+    right:6%;
+}
+.home-banner .icon-with-text .icon-items6 {
+    position: absolute;
+    top: 31%;
+    right:0;
+}
+.home-banner .icon-with-text .icon-items7 {
+    position: absolute;
+    bottom: 15%;
+    right: 14%;
+}
+
+.home-banner .icon-with-text .icon-items:hover span{
+  color:#E72027;
+}
+.home-banner .icon-with-text .icon-items:hover span svg path{
+  fill:#E72027;
+}
+
+  
+  /********iPad**********/
+
+@media (min-width:1025px) and (max-width:1280px){
+  .home-banner .icon-with-text span {;
+    font-size: 16px;
+    line-height: 24px;
+}
+  .home-banner .icon-with-text .icon-items5 {
+    position: absolute;
+    top: 17%;
+    right: 6%;
+}
+/*************dummy text*************/
+.home-banner .icon-with-text .icon-items1 .dummy-text {
+    margin-top: 0px;
+}
+
+.home-banner .icon-with-text .icon-items2 .dummy-text {
+    margin-top: 0px;
+}
+.home-banner .icon-with-text .icon-items7 .dummy-text {
+    margin-top: 0px;
+}
+  .home-banner .icon-with-text .icon-items5 .dummy-text {
+    margin-top: 4px;
+}
+.home-banner .icon-with-text .icon-items6 .dummy-text {
+    margin-top: 0px;
+}
+
+  
+}
+  
+@media screen and (max-width: 1024px) {
+  .home-banner .page-width {
+    padding: 0px 20px;
+}
+  .home-banner .col-5{
+    width:100%;
+  }
+  .home-banner .col-7{
+    width:100%
+  }
+  .home-banner-content {
+    max-width: 632px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom:43px;
+ }
+  .home-banner .review {
+    justify-content: center;
+}
+  .home-banner {
+    padding-top: 30px;
+    background-image: none;
+}
+  .home-banner .review {
+    margin-bottom: 14px;
+}
+}
+
+  /********mobile**********/
+@media screen and (max-width:767px){
+  .home-banner .product-title {
+    font-size: 34px;
+    line-height: 44px;
+ }
+
+  .home-banner .rte p {
+    margin-top: 24px;
+ }
+  .home-banner .review {
+    margin-bottom:22px;
+ }
+  .home-banner-content {
+    padding-bottom: 38px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.home-banner .page-width{
+  padding:0px 24px;
+}
+.home-banner .icon-with-text .circle{
+  width:16px;
+  height:16px;
+  border-radius:100px;
+  border:3px solid #fff;
+  background-color:#211E23;
+  transition:0.5s ease-in-out;
+  display:block !important;
+}
+.home-banner .icon-with-text .circle.active{
+  background-color:#E72027;
+}
+ .home-banner .icon-with-text .circle1{
+   position: absolute;
+    top: 46%;
+    left: 12%;
+ }
+  .home-banner .icon-with-text .circle2{
+   position: absolute;
+    top: 52%;
+    left: 11%;
+ }
+ .home-banner .icon-with-text .circle3 {
+    position: absolute;
+    bottom: 37%;
+    left: 22%;
+}
+ .home-banner .icon-with-text .circle4 {
+    position: absolute;
+    bottom: 26%;
+    left: 46%;
+}
+ .home-banner .icon-with-text .circle5 {
+    position: absolute;
+    top: 15%;
+    right: 40%;
+}
+.home-banner .icon-with-text .circle6 {
+    position: absolute;
+    top: 45%;
+    right: 29%;
+}
+.home-banner .icon-with-text .circle7 {
+    position: absolute;
+    bottom: 37%;
+    right: 28%;
+}
+.home-banner .icon-with-text .icon-items1 {
+    position: absolute;
+    top: 37%;
+    left: 8%;
+}
+.home-banner .icon-with-text .icon-items2 {
+    position: absolute;
+    top: 49%;
+    left: 17%;
+}
+.home-banner .icon-with-text .icon-items3 {
+    position: absolute;
+    bottom: 28%;
+    left: 19%;
+}
+.home-banner .icon-with-text .icon-items4 {
+    position: absolute;
+    bottom: 18%;
+    left: 44%;
+}
+.home-banner .icon-with-text .icon-items5 {
+    position: absolute;
+    top: 18%;
+    right: 13%;
+}
+.home-banner .icon-with-text .icon-items6 {
+    position: absolute;
+    top: 48%;
+    right: 0;
+}
+.home-banner .icon-with-text .icon-items7 {
+    position: absolute;
+    bottom: 28%;
+    right: 0%;
+}
+.home-banner .icon-with-text .icon-items span {
+    transition: 0.5s ease-in-out;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 5px;
+    
+}
+.home-banner .icon-with-text .icon-items {
+    display: none; 
+}
+
+.home-banner .icon-with-text .circle {
+    cursor: pointer;
+    z-index:1;
+}
+.home-banner .icon-with-text .dummy-text{
+    display:block !important;
+    margin-top:-4px !important;
+    border-radius:0px 0px 5px 5px;
+    width:100%;
+}  
+} 
+
+@media screen and (max-width:480px){
+  .home-banner .icon-with-text .icon-items1 {
+    position: absolute;
+    top: 36%;
+    left: 8%;
+}
+  .home-banner .icon-with-text .icon-items7 {
+    position: absolute;
+    bottom: 27%;
+    right: 0%;
+}
+  .home-banner .icon-with-text .icon-items4 {
+    position: absolute;
+    bottom: 16%;
+    left: 44%;
+}
+  
+}
+
+@media screen and (max-width:420px){
+  
+}
+  
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "New Home Banner",
+    "settings": [
+       {
+        "type": "text",
+        "id": "review_number",
+        "label": "Review Number"
+      },
+      {
+        "type": "text",
+        "id": "review_text",
+        "label": "Review Text"
+      },
+      {
+        "type": "text",
+        "id": "product_title",
+        "label": "Product Title"
+      },
+      {
+        "type": "richtext",
+        "id": "product_description",
+        "label": "Product Description"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "product_image",
+        "label": "Product Image Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_product_image",
+        "label": "Product Image Mobile"
+      },
+       {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Backgrund Image"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "icon-text",
+      "name": "Icon With Text",
+      "limit": 7,
+      "settings": [
+        {
+          "type": "html",
+          "id": "svg_icon",
+          "label": "Icon"
+        },
+        {
+        "type": "text",
+        "id": "icon_title",
+        "label": "Icon Title"
+       },
+        {
+        "type": "html",
+        "id": "description_text",
+        "label": "Description"
+       }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Home Banner",
+    }
+  ]
+  }
+{% endschema %}

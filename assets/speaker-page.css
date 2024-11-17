@@ -1,0 +1,190 @@
+.main-btn {
+    background-color: white;
+    color: #211E23;
+}
+
+.banner__box {
+    background-color: transparent;
+    color: white;
+}
+
+.banner__box h2 {
+    color: white;
+}
+
+/* contact form */
+/* .speaker-contact .page-width {
+    max-width: 1440px !important;
+    padding: 0;
+}
+
+.speaker-contact .contact-description {
+    padding-bottom: 150px !important;
+    max-width: none !important;
+}
+
+.speaker-contact .single-image {
+    width: 80% !important;
+    margin: 0 auto;
+}
+
+.speaker-contact .row {
+    position: relative;
+    align-items: center !important;
+}
+
+.speaker-contact .col-6 {
+    z-index: 1;
+}
+
+.contact-wrap {
+    width: 100vw;
+    z-index: 1;
+}
+
+.speaker-contact .contact-title.contact-text {
+    color: white
+}
+
+.speaker-contact .contact-form label {
+    color: white !important;
+} */
+
+.speaker-contact .page-width {
+    max-width: none !important;
+    padding: 0 !important;
+}
+.speaker-contact .contact-wrap {
+}
+.speaker-contact .row {
+    max-width: 1440px;
+    margin: 0 auto !important;
+}
+.speaker-contact .single-image {
+    width: 80% !important;
+    margin: 0 auto;
+}
+.speaker-contact-black {
+    right: 0;
+    background-color: #111112;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    display: block !important;
+}
+.speaker-contact .contact__button .main-btn {
+    background-color: #E72027;
+}
+/* contact form */
+
+/* Image With Text */
+.speaker-image-with-text {
+    justify-content: center;
+}
+.speaker-image-with-text .content-container {
+    justify-content: center;
+}
+.speaker-image-with-text .content-body {
+    justify-content: center;
+}
+.speaker-image-with-text .content_body {
+    padding: 0 40px;
+    border-left: 6px solid #E72027;
+}
+.speaker-image-with-text .content_body h4 {
+    font-size: 14px;
+    color: #E72027;
+}
+.speaker-image-with-text p {
+    font-size: 18px;
+    color: #111112 !important;
+}
+/* Image With Text */
+
+/* Brand List */
+.speaker-brandlist {
+    padding: 50px 0px !important; 
+}
+.logo-section .brand-list {
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    max-width: none !important;
+}
+/* Brand List */
+
+@media screen and (max-width: 1024px) {
+    .logo-section .brand-list {
+        flex-wrap: wrap !important;
+    }
+    /* .contact .col-6 {
+        width: 50% !important;
+    }
+
+    .contact .contact-image {
+        padding: 0 !important;
+    }
+
+    .contact .contact-form {
+        padding-right: 0 !important;
+    } */
+}
+
+@media only screen and (max-width: 768px) {
+    .speaker-image-with-text {
+        padding: 0 20px;
+    }
+    .image-with-text .image-with-text__heading {
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .image-with-text .image-with-text__text {
+        text-align: left !important;
+    }
+
+    .about-image-text .image-with-text__text-item .image-with-text__content {
+        padding: 24px 0 !important;
+    }
+
+    /* .speaker-contact .contact-description {
+        padding-bottom: 0 !important;
+    }
+
+    .speaker-contact .contact-description h1 {
+        font-size: 24px !important;
+        line-height: 1.5 !important;
+    }
+
+    .speaker-contact .contact-description p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+
+    .speaker-contact .contact-form label {
+        font-size: 18px !important;
+    }
+
+    .speaker-contact .contact-form button {
+        padding: 12px 24px !important;
+        font-size: 18px !important;
+    }
+
+    .speaker-contact-background {
+        top: auto;
+        bottom: -25px;
+        background-color: #111112;
+        width: 120%;
+        height: 85%;
+        border-radius: 20px 20px 0 0;
+        right: 0;
+    }
+
+    .contact .col-6 {
+        width: 100% !important;
+    }
+
+     */
+    .contact .contact-image .single-image img {
+        max-height: none !important;
+    }
+}

@@ -1,0 +1,343 @@
+<!---------------Review banner------------------>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="review-banner section-{{ section.id }}-padding">
+  <div class="page-width">
+     <div class="review-row">
+       <div class="col-8">
+         <div class="reviews-banner-items">
+           {%- if section.settings.heading  != blank -%}
+             <h1 class="review-heading">{{ section.settings.heading }}</h1>
+           {% endif %}
+           {%- if section.settings.description != blank -%}
+             <div class="description">
+               {{ section.settings.description }}
+             </div>
+           {% endif %}
+           <div class="reviews-btn-group">
+             {%- if section.settings.btn_link != blank -%}
+               <a href="{{ section.settings.btn_link }}" class="main-btn"><span>{{ section.settings.btn_text }}</span></a>
+             {% endif %}
+             <div class="google-review-items">
+                {%- if section.settings.google_logo != blank -%}
+                  <img src="{{ section.settings.google_logo | img_url: '' }}" alt="google-logo" >
+                {% endif %}
+               <div class="google-review-rating">
+                 {%- if section.settings.rating_img != blank -%}
+                  <img src="{{ section.settings.rating_img | img_url: '' }}" alt="rating_img" >
+                {% endif %}
+                 {%- if section.settings.rating_text != blank -%}
+                    <span class="google-rating">{{ section.settings.rating_text }}</span>
+                 {% endif %}
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="feature-on-content">
+              {%- if section.settings.main_title != blank -%}
+               <h5 class="feature-title">{{ section.settings.main_title }}</h5>
+              {% endif %}
+                <div class="review-logo-list">
+                  {% for block in section.blocks %}
+                         <img src="{{ block.settings.logo_image | img_url: '' }}" alt="Logo" class="logo-item">
+                  {% endfor %}
+                </div>
+        </div>
+       </div>
+       <div class="col-4">
+         <div class="review-main-image">
+            {%- if section.settings.product_img != blank -%}
+              <img src="{{ section.settings.product_img | img_url: '' }}" alt="google-logo" >
+            {% endif %}
+         </div>
+       </div>
+     </div>
+  </div>
+</section>
+
+<!------------ style ----------------->
+{% style %}
+  section.review-banner {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+.review-banner .review-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: 0px -20px;
+}
+.review-banner .review-row .col-8{
+  width:60%;
+  padding:0px 20px;
+}
+.review-banner .review-row .col-4{
+  width:40%;
+  padding:0px 20px;
+}
+.review-banner .review-main-image img {
+    width: 100%;
+    display: block;
+    position: relative;
+    min-height: 444px;
+    object-fit:cover;
+    border-radius: 0px 0px 24px 24px;
+}
+
+.review-banner .review-main-image{
+  width:100%;
+  display:block;
+  position:relative;
+  padding-right:78px;
+  padding-bottom:78px;
+}
+.review-banner .review-main-image:before {
+    content: '';
+    background-color: rgba(210, 180, 140, 1);
+    width: calc(100% - 78px);
+    height: 100%;
+    border-radius: 24px;
+    position: absolute;
+    max-height: 450px;
+    bottom: 0;
+    right: 0;
+}
+.review-banner .review-heading {
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 54px;
+    line-height: 62px;
+    letter-spacing: -0.02em;
+    color: rgba(33, 30, 35, 1);
+    margin: 0;
+}
+.review-banner .description p {
+    font-family:var(--font-body-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color:#211E23;
+    margin:0;
+}
+.review-banner .description{
+    margin:24px 0;
+}
+.review-banner .google-review-items {
+    display: flex;
+    align-items: center;
+}
+.review-banner  .reviews-btn-group {
+    display: inline-flex;
+    column-gap:48px;
+    align-items: center;
+}
+.review-banner  .reviews-btn-group .main-btn{
+  height:100%;
+}
+.review-banner  .reviews-btn-group .google-rating p {
+    margin: 0;
+}
+.review-banner  .reviews-btn-group .google-rating p strong{
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 30px;
+    line-height: 40px;
+    color:rgba(33, 30, 35, 1);
+}
+.review-banner  .reviews-banner-items {
+    width: 100%;
+    max-width: 566px;
+}
+.review-banner  .google-review-rating {
+    margin-left: 24px;
+}
+.review-banner .google-rating {
+    display:block;
+}
+.review-banner .feature-on-content {
+  margin-top:73px;
+  margin-bottom: -20px;
+}
+.review-banner .review-logo-list img {
+    height: 100%;
+    height: 68px;
+    object-fit: contain;
+    margin-right:30px;
+}
+.review-banner .feature-title{
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    color: rgba(33, 30, 35, 1);
+    margin: 0;
+}
+/******************** Responsive ***********************/
+@media screen and (max-width:1024px){
+.review-banner .review-row .col-8, .review-banner .review-row .col-4 {
+    width:100%;
+    padding:0 20px;
+}
+.review-banner .feature-on-content {
+    margin-top: 48px;
+    margin-bottom:48px;
+}
+.review-banner .review-main-image {
+    padding-right: 60px;
+    padding-bottom: 60px;
+    margin-top: 48px;
+    max-width: 365px;
+    margin: 0 auto;
+}
+section.review-banner {
+    margin-top: 30px;
+}
+.review-banner  .reviews-banner-items {
+    text-align: center;
+    max-width: 550px;
+    margin:0 auto;
+}  
+ .review-banner .review-heading {
+    font-size: 42px;
+    line-height: 54px;
+}
+.review-banner .review-main-image img {
+    min-height: 360px;
+    border-radius:24px;
+}
+.review-banner .review-main-image:before {
+    max-height: 360px;
+    width: calc(100% - 60px);
+}
+  
+}
+@media screen and (max-width:767px){
+  .review-banner  .reviews-btn-group {
+    flex-direction: column-reverse;
+    row-gap: 30px;
+}
+.review-banner .review-heading {
+    font-size: 40px;
+    line-height: 48px;
+}
+.review-banner  .reviews-banner-items {
+    max-width: 424px;
+}
+.review-banner .review-main-image {
+    max-width: 100%;
+}
+  
+}
+
+  
+{% endstyle %}
+<!------------ style ----------------->
+
+{% schema %}
+  {
+    "name": "Review Banner",
+    "settings": [
+       {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+      {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+      {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        },
+      {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+      {
+          "type": "image_picker",
+          "id": "google_logo",
+          "label": "Google Logo"
+        },
+      {
+          "type": "image_picker",
+          "id": "rating_img",
+          "label": "Rating Image"
+        },
+      {
+          "type": "richtext",
+          "id": "rating_text",
+          "label": "Rating Text"
+        },
+      {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Product Image"
+        },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+      {
+        "type": "text",
+        "id": "main_title",
+        "label": "Slider Heading"
+    }
+    ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image",
+          "info": "Upload a logo image."
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Review Banner",
+      }
+  ]
+  }
+{% endschema %}

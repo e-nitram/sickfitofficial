@@ -1,0 +1,235 @@
+<!---------------------main product tab--------------------------->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="main-feature-tab section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="socks-features">
+      {% if section.settings.title %}
+        <h2 class="main-title">{{ section.settings.title }}</h2>
+       {% endif %}
+      <div class="accordion">
+        {% for block in section.blocks %}
+        <div class="accordion-item">
+            <button class="accordion-title">
+              <span class="tab-icon-title">
+                {% if block.settings.icon_image %}
+                    <img src="{{ block.settings.icon_image | img_url: '100x100' }}" alt="{{ block.settings.feature_title }}">
+                {% endif %}
+                <h4 class="tab-title">{{ block.settings.feature_title }}</h4>
+              </span>
+                
+                <span class="plus-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="9" width="0.999999" height="17" transform="rotate(-90 1 9)" fill="#211E23"/>
+                  <rect x="9" y="1" width="1" height="17" fill="#211E23"/>
+                  </svg>
+                </span>
+                <span class="minus-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="9" width="0.999999" height="17" transform="rotate(-90 1 9)" fill="#211E23"/>
+                  </svg>
+                </span>
+            </button>
+            <div class="accordion-content">
+                {{ block.settings.feature_description }}
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+      </div>
+  </div>
+</section>
+
+
+
+{% style %}
+.main-feature-tab .socks-features {
+    width: 100%;
+    max-width: 890px;
+    margin: 0 auto;
+}
+.main-feature-tab  .socks-features h2 {
+    text-align: center;
+    margin-bottom:48px;
+}
+.main-feature-tab .accordion-title .tab-title {
+    font-family: Gilroy;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #211E23;
+    margin:0;
+    letter-spacing: -.02em;
+}
+.main-feature-tab .accordion {
+    
+}
+
+.main-feature-tab .accordion-item {
+    margin-bottom:30px;
+}
+.main-feature-tab .accordion-title .tab-icon-title {
+    display: inline-flex;
+    align-items: center;
+}
+.main-feature-tab .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border:none;
+    border-bottom:1px solid #211E23;
+    width: 100%;
+    text-align: left;
+    padding: 18px 0;
+    margin:0;
+}
+
+.main-feature-tab .accordion-title img {
+    margin-right: 10px;
+}
+
+.main-feature-tab .accordion-title .plus-icon,
+.main-feature-tab .accordion-title .minus-icon {
+    font-size: 1.5rem;
+}
+
+.main-feature-tab .accordion-item .accordion-content ul {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    padding-left:0;
+    margin:0;
+    margin-bottom:15px;
+    gap:20px;
+}
+.main-feature-tab .accordion-item .accordion-content ul li{
+    list-style:none;
+    font-size:16px;
+    line-height:24px;
+    color:#211E23;
+    letter-spacing: -.01em;
+    background-color:#EBEBEE;
+    padding:16px 20px;
+    width: calc(25% - 20px);
+}
+.main-feature-tab .accordion-item .accordion-content {
+   display:none;
+  margin-top:38px;
+}
+.main-feature-tab .accordion-item .accordion-content p {
+    font-family: var(--font-body-family);
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin-bottom: 0px;
+    color: #211E23;
+    margin-top:15px;
+}
+.main-feature-tab .accordion-item.active .plus-icon {
+    display: none;
+}
+
+.main-feature-tab .accordion-item.active .minus-icon {
+    display: inline;
+}
+.main-feature-tab .accordion-item .minus-icon {
+    display:none;
+}
+
+
+ @media (max-width:991px){
+   .main-feature-tab .accordion-item .accordion-content ul li{
+    width:50%;
+    text-align:center;
+}
+ }
+  @media (max-width:600px){
+    .main-feature-tab .accordion-item .accordion-content ul li{
+      width:100%;
+   }
+  }
+{% endstyle %}
+
+
+
+
+
+{% schema %}
+{
+  "name": "Product Accordion",
+  "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+     {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_block",
+      "name": "Feature Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_title",
+          "label": "Feature Title"
+        },
+        {
+          "type": "richtext",
+          "id": "feature_description",
+          "label": "Feature Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Feature Icon (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Accordion",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "new_home_banner_qY68wC": {
+      "type": "new-home-banner",
+      "settings": {
+        "review_number": "80+",
+        "review_text": "Reviews",
+        "product_title": "Military Grade Socks for Athletes, Soldiers & You",
+        "product_description": "<p>Change the world one sock at a time<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "product_image": "shopify:\/\/shop_images\/Group_40_1.png",
+        "mobile_product_image": "shopify:\/\/shop_images\/Group_40_2.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "new_home_banner_qY68wC"
+  ]
+}

@@ -1,0 +1,250 @@
+<!-------Refund Policy---------->
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="refund-policy section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="policy-main-title">
+      {%- if section.settings.heading != blank -%}
+         <h1 class="main-title">
+           {{ section.settings.heading }}
+         </h1>
+       {% endif %}
+      {%- if section.settings.description != blank -%}
+        <div class="description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+     <div class="policy-section">
+         {% for block in section.blocks %}
+           <div class="policy-items">
+             {%- if block.settings.title != blank -%}
+               <h2 class="policy-title">{{ block.settings.title }}</h2>
+              {% endif %}
+             {%- if block.settings.list != blank -%}
+               <div class="policy-list">
+                 {{ block.settings.list }}
+               </div>
+            {% endif %}
+           </div>
+           {%- if block.settings.quote != blank -%}
+             <span class="policy-quote">{{ block.settings.quote }}</span>
+          {% endif %}
+         {% endfor %}
+     </div>
+  </div>
+</section>
+
+
+{% style %}
+  .refund-policy {
+    width:100%;
+    max-width:945px;
+    margin:0 auto;
+   
+  }
+  .refund-policy .policy-main-title{
+    width:100%;
+    max-width:826px;
+    margin:0 auto;
+    text-align:center;
+     padding-bottom:34px;
+  }
+   .refund-policy .policy-main-title a{
+      color:#e72027;
+     font-weight:700;
+   }
+  .refund-policy .policy-main-title .description p{
+    font-size:18px;
+    line-height:30px;
+    color:rgba(33, 30, 35, 1);
+    margin-top:16px;
+    margin-bottom:0px;
+    letter-spacing: -0.02em;
+  }
+  .refund-policy  .policy-title {
+    font-family: "Gilroy";
+    font-weight:bold;
+    font-size: 30px;
+    line-height: 40px;
+    color: rgba(33, 30, 35, 1);
+    font-weight: 700;
+    padding:14px 0;
+    margin:0;
+    letter-spacing: -0.02em;
+  }
+  /* .refund-policy .policy-list ul li {
+    font-family:var(--font-body-family);
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    color:rgba(33, 30, 35, 1);
+    letter-spacing: -0.02em;
+    list-style-image: url('https://cdn.shopify.com/s/files/1/0601/6955/1949/files/Script_Icon_Sick_Fit_RED.png?v=1725985056');
+  } */
+.refund-policy .policy-list ul li {
+    font-family: var(--font-body-family);
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    color: rgba(33, 30, 35, 1);
+    letter-spacing: -0.02em;
+    list-style: none;
+    position: relative;
+    padding-left:40px;
+}
+
+.refund-policy .policy-list ul li::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0601/6955/1949/files/Script_Icon_Sick_Fit_RED.png?v=1725985056');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+
+  
+  .refund-policy .policy-list ul {
+    border-top: 1px solid rgba(33, 30, 35, 1);
+    border-bottom: 1px solid rgba(33, 30, 35, 1);
+    margin: 0;
+    padding: 24px 0px 8px 30px;
+   }
+   .refund-policy .policy-items{
+     margin-top:48px;
+   }
+  .refund-policy .policy-main-title .main-title {
+    font-size: 54px;
+    line-height:62px;
+  }
+  .refund-policy .policy-quote {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight:400;
+    font-style: italic;
+    margin-top: 14px;
+    display: block;
+    padding-left: 30px;
+    letter-spacing: -0.02em;
+  }
+
+@media screen and (max-width:1024px){
+  .refund-policy .policy-main-title .main-title {
+    font-size:42px;
+    line-height:54px;
+  }
+  .refund-policy .policy-main-title {
+    padding-bottom: 0;
+    max-width:600px;
+  }
+  .refund-policy {
+    padding-top:30px;
+  }
+}
+@media screen and (max-width:767px){
+  .refund-policy .policy-main-title .main-title {
+    font-size:40px;
+    line-height:48px;
+  }
+  .refund-policy  .policy-title {
+    line-height: 36px;
+   }
+  
+} 
+@media screen and (max-width:420px){
+  .refund-policy  .policy-title {
+    font-size:;
+    line-height: 36px;
+   }
+}
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Refund Policy",
+    "settings": [
+        {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+       },
+       {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+       },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+
+    ],
+  "blocks": [
+    {
+      "type": "list",
+      "name": "List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "list",
+          "label": "List"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Refund Policy",
+    }
+  ]
+  }
+{% endschema %}

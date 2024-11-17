@@ -1,0 +1,183 @@
+<!----------collaborations page section------------------->
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="collaborations-page-section section-{{ section.id }}-padding">
+   <div class="page-width">
+       <div class="collaborations-title">
+          {%- if section.settings.title != blank -%}
+           <h1 class="main-title">{{ section.settings.title }}</h1>
+          {% endif %}
+          {%- if section.settings.description != blank -%}
+           <div class="description">{{ section.settings.description }}</div>
+          {% endif %}
+       </div>
+       <div class="collaboration-slider">
+           <div class="row">
+               {%- if section.settings.main_title != blank -%}
+                  <h5 class="feature-title">{{ section.settings.main_title }}</h5>
+               {% endif %}
+                <div class="review-logo-list">
+                  {% for block in section.blocks %}
+                         <img src="{{ block.settings.logo_image | img_url: '' }}" alt="Logo" class="logo-item">
+                  {% endfor %}
+                </div>
+           </div>
+       </div>
+   </div>
+</section>
+
+
+{% style %}
+.collaborations-page-section .description p {
+    font-family: var(--font-body-family);
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin-top:6px;
+    margin-bottom: 0px;
+    color: #211E23;
+}
+.collaborations-page-section .page-width{
+  max-width:1180px;
+}
+ .collaborations-page-section .collaborations-title{
+    width:100%;
+    max-width:650px;
+    margin:0 auto;
+   text-align:center;
+ } 
+.collaborations-page-section .collaboration-slider img {
+    height: 68px;
+    object-fit: contain;
+    margin-right: 30px;
+    aspect-ratio: 3/2;
+    max-width: 130px;
+}
+.collaborations-page-section .collaboration-slider .feature-title {
+    font-family: Gilroy;
+    font-weight:700;
+    font-size:20px;
+    line-height:32px;
+    letter-spacing: -0.01em;
+    margin-top:0px;
+    margin-bottom: 0px;
+    color: #211E23;
+    width:15%;
+    padding:0px 10px;
+}
+.collaborations-page-section .collaboration-slider .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:0px -10px;
+}
+.collaborations-page-section .collaboration-slider .review-logo-list{
+  width:85%;
+  padding:0px 10px;
+} 
+.collaborations-page-section .collaboration-slider {
+   margin-top:30px;
+}
+/************ responsive *******************/
+@media screen and (max-width:1024px){
+.collaborations-page-section .collaboration-slider .feature-title {
+    width: 100%;
+    text-align: center;
+}
+.collaborations-page-section .collaboration-slider .review-logo-list {
+    width:100%;
+    margin-top:25px;
+}
+.collaborations-page-section{
+  padding-top:32px;
+  padding-bottom:48px;
+}
+}
+
+@media screen and (max-width:767px){
+ .collaborations-page-section .collaboration-slider {
+    margin-top: 48px;
+} 
+}  
+{% endstyle %}
+
+
+
+
+{% schema %}
+  {
+    "name": "Collaboration Page",
+    "settings": [
+      {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+      {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+      {
+          "type": "text",
+          "id": "main_title",
+          "label": "Slider Title"
+        },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+      
+    ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image",
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Collaboration Page",
+      }
+  ]
+  }
+{% endschema %}
